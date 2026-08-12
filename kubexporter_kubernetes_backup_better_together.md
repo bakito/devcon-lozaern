@@ -1,11 +1,14 @@
----
-title: Introducing _kubexporter_
-author: el Raphaël / bakito
----
+<!-- newlines: 16 -->
 
+![](kubexporter.png)
 
-kubexporter in action
----
+kubexporter - (kubernetes) Backup better. Together.
+====
+
+<!-- alignment: center -->
+
+<span style="color: blue">Raphael Müller / Marc Brugger</span>
+<!-- end_slide -->
 
 Running kubexporter to export your kubernetes resources:
 

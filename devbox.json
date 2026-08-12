@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.5/.schema/devbox.schema.json",
+  "packages": [
+    "presenterm@latest",
+    "mermaid-cli@latest",
+    "python314Packages.weasyprint@latest"
+  ],
+  "env": {
+    "PRESENTATION_FILE": "kubexporter_kubernetes_backup_better_together.md"
+  },
+  "shell": {
+
+    "scripts": {
+      "present": [
+        "presenterm ${PRESENTATION_FILE} -c config.yaml -x"
+      ],
+      "pdf": [
+        "presenterm ${PRESENTATION_FILE} -c config.yaml -e"
+      ]
+    }
+  }
+}

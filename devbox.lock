@@ -1,0 +1,145 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-08-11T01:00:43Z",
+      "resolved": "github:NixOS/nixpkgs/8e2eeb9477c9d40009a5bd51cd3eef2f5abb26f1?lastModified=1786410043&narHash=sha256-JTbODJPDcd3d8U7lO4MVUU3Yo0jz2KQSAHXka%2BIWBEo%3D"
+    },
+    "mermaid-cli@latest": {
+      "last_modified": "2026-08-07T10:21:50Z",
+      "resolved": "github:NixOS/nixpkgs/afb4584a80bbf779ce0f691509ff902d188c2b3d#mermaid-cli",
+      "source": "devbox-search",
+      "version": "11.16.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/q30k9n6w94n6amhs6bxqarw3waj2zl15-mermaid-cli-11.16.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/q30k9n6w94n6amhs6bxqarw3waj2zl15-mermaid-cli-11.16.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/inp1v8g0wb7lzfl9lj95w3d2dhl130y3-mermaid-cli-11.16.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/inp1v8g0wb7lzfl9lj95w3d2dhl130y3-mermaid-cli-11.16.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/l5nqqs5b9vhnclk425j9v9biz7ln807i-mermaid-cli-11.16.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/l5nqqs5b9vhnclk425j9v9biz7ln807i-mermaid-cli-11.16.0"
+        }
+      }
+    },
+    "presenterm@latest": {
+      "last_modified": "2026-08-01T16:34:20Z",
+      "resolved": "github:NixOS/nixpkgs/a5cbcfe954791221bfffe2307f7d1a1bf61a871e#presenterm",
+      "source": "devbox-search",
+      "version": "0.16.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nj1lv53dg3zkvcy97cfaja0165x4wrw2-presenterm-0.16.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/nj1lv53dg3zkvcy97cfaja0165x4wrw2-presenterm-0.16.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/w0shchbp9d3w5xphw53sbcz05sfzz2xl-presenterm-0.16.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/w0shchbp9d3w5xphw53sbcz05sfzz2xl-presenterm-0.16.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/kzkk6gywcwhghrdz0kyp7l7r4ijyangw-presenterm-0.16.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/kzkk6gywcwhghrdz0kyp7l7r4ijyangw-presenterm-0.16.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zcgji3vbp4mbfmyxm85x44afpaa06229-presenterm-0.16.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zcgji3vbp4mbfmyxm85x44afpaa06229-presenterm-0.16.1"
+        }
+      }
+    },
+    "python314Packages.weasyprint@latest": {
+      "last_modified": "2026-08-01T16:34:20Z",
+      "resolved": "github:NixOS/nixpkgs/a5cbcfe954791221bfffe2307f7d1a1bf61a871e#python314Packages.weasyprint",
+      "source": "devbox-search",
+      "version": "69.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/xll2z1kf5isrb79ixyd9zv0z3gvpvacj-python3.14-weasyprint-69.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/cv6bygcbilgr4rv83bq98v0605jypxl0-python3.14-weasyprint-69.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/xll2z1kf5isrb79ixyd9zv0z3gvpvacj-python3.14-weasyprint-69.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/b6alhddcsp7isvcynr38d2fyh55wc0sc-python3.14-weasyprint-69.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/njc67iq3wblica72hz65ndcmwkaki3h3-python3.14-weasyprint-69.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/b6alhddcsp7isvcynr38d2fyh55wc0sc-python3.14-weasyprint-69.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/rjc1b0lf9fcmcx1xz3f566kkaf6bhm3j-python3.14-weasyprint-69.0",
+              "default": true
+            },
+            {
+              "name": "dist",
+              "path": "/nix/store/8rix9da7mdi08wxsaac9m4ygq95yspsf-python3.14-weasyprint-69.0-dist"
+            }
+          ],
+          "store_path": "/nix/store/rjc1b0lf9fcmcx1xz3f566kkaf6bhm3j-python3.14-weasyprint-69.0"
+        }
+      }
+    }
+  }
+}

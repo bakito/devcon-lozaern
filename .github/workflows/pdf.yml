@@ -1,4 +1,4 @@
-name: Generate PDF
+name: Generate PDF/HTML
 on:
   push:
     branches: [main]
@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  pdf:
+  export:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -17,11 +17,17 @@ jobs:
             task: devcon-pdf
             artifact: pdf
             file: kubexporter_kubernetes_backup_better_together.pdf
+            html_task: devcon-html
+            html_artifact: html
+            html_file: kubexporter_kubernetes_backup_better_together.html
           - name: pdf-kubexporter
             dir: kubexporter
             task: kubexporter-pdf
             artifact: pdf-kubexporter
             file: kubexporter.pdf
+            html_task: kubexporter-html
+            html_artifact: html-kubexporter
+            html_file: kubexporter.html
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -37,7 +43,7 @@ jobs:
       - name: Generate PDF ${{ matrix.name }}
         run: |
           cd ${{ matrix.dir }}
-          script -e -c "stty rows 60 cols 160
+          script -e -c "stty rows 30 cols 120
           devbox run ${{ matrix.task }}" /dev/null
 
       - name: Upload PDF ${{ matrix.name }}
@@ -45,3 +51,15 @@ jobs:
         with:
           name: ${{ matrix.artifact }}
           path: ${{ matrix.dir }}/${{ matrix.file }}
+
+      - name: Generate HTML ${{ matrix.name }}
+        run: |
+          cd ${{ matrix.dir }}
+          script -e -c "stty rows 30 cols 120
+          devbox run ${{ matrix.html_task }}" /dev/null
+
+      - name: Upload HTML ${{ matrix.name }}
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: ${{ matrix.html_artifact }}
+          path: ${{ matrix.dir }}/${{ matrix.html_file }}

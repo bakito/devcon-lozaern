@@ -1,32 +1,46 @@
 # Requirements
 
-This project uses [Nix](https://nixos.org/) and [devbox](https://jetify.com/devbox/) to manage dependencies. Make sure both are installed before proceeding.
+This project uses [devbox](https://www.jetify.com/devbox) (which is built on top of [Nix](https://nixos.org/)) to manage dependencies.
 
-### Installing Nix
+## Installing devbox
 
-Install Nix using the official installer. On Linux and macOS, run:
-
-```bash
-sh <(curl -L https://nixos.org/nix/install) --daemon
-```
-
-After installation, reload your shell or run `nix --version` to verify it works.
-
-### Installing devbox
-
-Once Nix is installed, install devbox:
+The easiest way to install devbox is using the official install script (run it as a **non-root user**). If Nix is not present, devbox will automatically install it the first time you run a devbox command:
 
 ```bash
-nix profile install nixpkgs#devbox
+curl -fsSL https://get.jetify.com/devbox | bash
 ```
 
-Verify the installation:
+After installation, reload your shell and verify devbox is working:
 
 ```bash
-devbox --version
+devbox version
 ```
 
-For more details, see the [devbox documentation](https://jetify.com/devbox/).
+### Alternative: Manual Installation
+
+If you prefer to install Nix and devbox manually:
+
+1. **Install Nix** using the [Determinate Nix Installer](https://github.com/DeterminateSystems/nix-installer):
+
+    ```bash
+    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+    ```
+
+2. **Install devbox** via Nix:
+
+    ```bash
+    nix profile add nixpkgs#devbox
+    ```
+
+    Or, for the latest version via Nix Flake:
+
+    ```bash
+    nix profile add github:jetify-com/devbox/latest
+    ```
+
+    > **Note:** `nix profile add` requires Nix 2.29 or newer. On older Nix versions use `nix profile install` instead.
+
+For more details, see the [devbox documentation](https://www.jetify.com/docs/devbox/installing-devbox).
 
 ## Setup
 
@@ -42,8 +56,10 @@ devbox shell
 
 - **Run presentation**: `devbox run devcon-present`
 - **Export to PDF**: `devbox run devcon-pdf`
+- **Export to HTML**: `devbox run devcon-html`
 
 ### Kubexporter Presentation
 
 - **Run presentation**: `devbox run kubexporter-present`
 - **Export to PDF**: `devbox run kubexporter-pdf`
+- **Export to HTML**: `devbox run kubexporter-html`

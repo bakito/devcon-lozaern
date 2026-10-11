@@ -17,13 +17,19 @@
         "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml -x"
       ],
       "devcon-pdf": [
-        "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml -e"
+        "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml --export-pdf"
+      ],
+      "devcon-html": [
+        "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml --export-html"
       ],
       "kubexporter-present": [
         "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml -x"
       ],
       "kubexporter-pdf": [
-        "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml -e"
+        "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml --export-pdf"
+      ],
+      "kubexporter-html": [
+        "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml --export-html"
       ]
     }
   }

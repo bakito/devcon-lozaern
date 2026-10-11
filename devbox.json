@@ -4,32 +4,44 @@
     "presenterm@0.16.1",
     "mermaid-cli@11.16.0",
     "python314Packages.weasyprint@69.0",
-    "bat@0.26.1"
+    "bat@0.26.1",
+    "expect@5.45.4"
   ],
   "env": {
-    "DEVCON_PRESENTATION_FILE": "kubexporter_kubernetes_backup_better_together.md",
-    "KUBEXPORTER_PRESENTATION_FILE": "kubexporter/kubexporter.md"
+    "SLIDES": "kubexporter_kubernetes_backup_better_together.md",
+    "KUBEXPORTER_SLIDES": "kubexporter/kubexporter.md"
   },
   "shell": {
-
     "scripts": {
-      "devcon-present": [
-        "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml -x"
+      "present": [
+        "presenterm ${SLIDES} -c config.yaml -x"
       ],
-      "devcon-pdf": [
-        "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml --export-pdf"
+      "pdf": [
+        "presenterm ${SLIDES} -c config.yaml --export-pdf"
       ],
-      "devcon-html": [
-        "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml --export-html"
+      "html": [
+        "presenterm ${SLIDES} -c config.yaml --export-html"
       ],
-      "kubexporter-present": [
-        "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml -x"
+      "k-present": [
+        "presenterm ${KUBEXPORTER_SLIDES} -c config.yaml -x"
       ],
-      "kubexporter-pdf": [
-        "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml --export-pdf"
+      "k-pdf": [
+        "presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-pdf"
       ],
-      "kubexporter-html": [
-        "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml --export-html"
+      "k-html": [
+        "presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-html"
+      ],
+      "pdf-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c config.yaml --export-pdf"
+      ],
+      "html-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c config.yaml --export-html"
+      ],
+      "k-pdf-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-pdf"
+      ],
+      "k-html-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-html"
       ]
     }
   }

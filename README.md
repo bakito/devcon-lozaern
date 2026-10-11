@@ -54,12 +54,12 @@ devbox shell
 
 ### DevCon Presentation
 
-- **Run presentation**: `devbox run devcon-present`
-- **Export to PDF**: `devbox run devcon-pdf`
-- **Export to HTML**: `devbox run devcon-html`
+- **Run presentation**: `devbox run present`
+- **Export to PDF**: `devbox run pdf`
+- **Export to HTML**: `devbox run html`
 
 ### Kubexporter Presentation
 
-- **Run presentation**: `devbox run kubexporter-present`
-- **Export to PDF**: `devbox run kubexporter-pdf`
-- **Export to HTML**: `devbox run kubexporter-html`
+- **Run presentation**: `devbox run k-present`
+- **Export to PDF**: `devbox run k-pdf`
+- **Export to HTML**: `devbox run k-html`

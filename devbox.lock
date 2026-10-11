@@ -49,6 +49,70 @@
         }
       }
     },
+    "expect@5.45.4": {
+      "last_modified": "2026-08-27T07:16:00Z",
+      "resolved": "github:NixOS/nixpkgs/c27cdad491a991b11ed731760aa2ef8db0cb0410#expect",
+      "source": "devbox-search",
+      "version": "5.45.4",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8mhq2lnjdyrw48mryi4d9ch2pwf8540p-expect-5.45.4",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/wn3pxs0d7cz5jqskpvqs2f82dfww65ya-expect-5.45.4-dev"
+            }
+          ],
+          "store_path": "/nix/store/8mhq2lnjdyrw48mryi4d9ch2pwf8540p-expect-5.45.4"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/50yr7b13bcajwc2h4wd45fxmvv3kyvjw-expect-5.45.4",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/dlw5rwccn8f5p8bn0ni8mxh5whz42xb7-expect-5.45.4-dev"
+            }
+          ],
+          "store_path": "/nix/store/50yr7b13bcajwc2h4wd45fxmvv3kyvjw-expect-5.45.4"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/gmmkxgnyga4xd26q57cs1vz629jc1749-expect-5.45.4",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/0hm1y4795f8cgl2bnqj1brls06v3rxyy-expect-5.45.4-dev"
+            }
+          ],
+          "store_path": "/nix/store/gmmkxgnyga4xd26q57cs1vz629jc1749-expect-5.45.4"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/19a9a3jgnr4pg53d5ssyb8y7kggqrnym-expect-5.45.4",
+              "default": true
+            },
+            {
+              "name": "dev",
+              "path": "/nix/store/y1i0d1fm9p8qlsww44dpfkp8kzfadhk1-expect-5.45.4-dev"
+            }
+          ],
+          "store_path": "/nix/store/19a9a3jgnr4pg53d5ssyb8y7kggqrnym-expect-5.45.4"
+        }
+      }
+    },
     "github:NixOS/nixpkgs/nixpkgs-unstable": {
       "last_modified": "2026-08-11T01:00:43Z",
       "resolved": "github:NixOS/nixpkgs/8e2eeb9477c9d40009a5bd51cd3eef2f5abb26f1?lastModified=1786410043&narHash=sha256-JTbODJPDcd3d8U7lO4MVUU3Yo0jz2KQSAHXka%2BIWBEo%3D"

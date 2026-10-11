@@ -1,4 +1,4 @@
-name: Generate PDF
+name: Generate PDF/HTML
 on:
   push:
     branches: [main]
@@ -7,21 +7,23 @@ on:
   workflow_dispatch:
 
 jobs:
-  pdf:
+  export:
     runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
-          - name: pdf
+          - name: devcon
             dir: .
-            task: devcon-pdf
-            artifact: pdf
-            file: kubexporter_kubernetes_backup_better_together.pdf
-          - name: pdf-kubexporter
+            pdf_task: pdf
+            pdf_file: kubexporter_kubernetes_backup_better_together.pdf
+            html_task: html
+            html_file: kubexporter_kubernetes_backup_better_together.html
+          - name: kubexporter
             dir: kubexporter
-            task: kubexporter-pdf
-            artifact: pdf-kubexporter
-            file: kubexporter.pdf
+            pdf_task: k-pdf
+            pdf_file: kubexporter.pdf
+            html_task: k-html
+            html_file: kubexporter.html
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -35,13 +37,15 @@ jobs:
         uses: jetify-com/devbox-install-action@8c6a66ed6273138b1915457069de78cb52fe3bd7 # v0.15.0
 
       - name: Generate PDF ${{ matrix.name }}
-        run: |
-          cd ${{ matrix.dir }}
-          script -e -c "stty rows 60 cols 160
-          devbox run ${{ matrix.task }}" /dev/null
+        run: devbox run ${{ matrix.pdf_task }}-export
 
-      - name: Upload PDF ${{ matrix.name }}
+      - name: Generate HTML ${{ matrix.name }}
+        run: devbox run ${{ matrix.html_task }}-export
+
+      - name: Upload ${{ matrix.name }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: ${{ matrix.artifact }}
-          path: ${{ matrix.dir }}/${{ matrix.file }}
+          name: ${{ matrix.name }}
+          path: |
+            ${{ matrix.dir }}/${{ matrix.pdf_file }}
+            ${{ matrix.dir }}/${{ matrix.html_file }}

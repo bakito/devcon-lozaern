@@ -1,0 +1,59 @@
+#!/usr/bin/expect -f
+# Run a command inside a pseudo-terminal that answers basic terminal queries.
+#
+# presenterm queries the terminal (device attributes, status report, cursor
+# position) on startup and blocks until it gets an answer. CI runners have no
+# real terminal, so this script emulates the minimal responses needed.
+#
+# Usage: expect-tty.exp [--rows N] [--cols N] -- command [args...]
+
+set rows 60
+set cols 160
+set timeout -1
+
+# Parse arguments
+set idx 0
+while {$idx < $argc} {
+    set arg [lindex $argv $idx]
+    if {$arg eq "--rows"} {
+        incr idx
+        set rows [lindex $argv $idx]
+    } elseif {$arg eq "--cols"} {
+        incr idx
+        set cols [lindex $argv $idx]
+    } elseif {$arg eq "--"} {
+        incr idx
+        break
+    }
+    incr idx
+}
+set cmd_str [join [lrange $argv $idx end]]
+if {$cmd_str eq ""} {
+    puts "error: missing command"
+    exit 1
+}
+
+# Set terminal size for the spawned PTY
+set term_size [list $cols $rows]
+
+# Pass through all output
+log_user 1
+
+# Spawn the command via sh so arguments are properly parsed
+spawn -noecho sh -c $cmd_str
+
+# Loop responding to terminal queries until EOF
+expect {
+    -re {\x1b\[c} { send "\x1b\[?62;22c" ; exp_continue }
+    -re {\x1b\[5n} { send "\x1b\[0n" ; exp_continue }
+    -re {\x1b\[6n} { send "\x1b\[1;1R" ; exp_continue }
+    eof
+}
+
+# Wait for the spawned process and get exit code
+wait
+set exit_code 0
+if {[info exists expect_out(spawn_id,exit,value)]} {
+    set exit_code $expect_out(spawn_id,exit,value)
+}
+exit $exit_code

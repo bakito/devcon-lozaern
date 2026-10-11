@@ -4,7 +4,8 @@
     "presenterm@0.16.1",
     "mermaid-cli@11.16.0",
     "python314Packages.weasyprint@69.0",
-    "bat@0.26.1"
+    "bat@0.26.1",
+    "expect@5.45.4"
   ],
   "env": {
     "DEVCON_PRESENTATION_FILE": "kubexporter_kubernetes_backup_better_together.md",

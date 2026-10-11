@@ -30,6 +30,18 @@
       ],
       "k-html": [
         "presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-html"
+      ],
+      "pdf-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c config.yaml --export-pdf"
+      ],
+      "html-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c config.yaml --export-html"
+      ],
+      "k-pdf-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-pdf"
+      ],
+      "k-html-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-html"
       ]
     }
   }

@@ -9,6 +9,19 @@ on:
 jobs:
   pdf:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - name: pdf
+            dir: .
+            task: devcon-pdf
+            artifact: pdf
+            file: kubexporter_kubernetes_backup_better_together.pdf
+          - name: pdf-kubexporter
+            dir: kubexporter
+            task: kubexporter-pdf
+            artifact: pdf-kubexporter
+            file: kubexporter.pdf
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -21,11 +34,14 @@ jobs:
       - name: Install Devbox
         uses: jetify-com/devbox-install-action@8c6a66ed6273138b1915457069de78cb52fe3bd7 # v0.15.0
 
-      - name: Generate PDF
-        run: script -e -c "stty rows 40 cols 120 && devbox run pdf" /dev/null
+      - name: Generate PDF ${{ matrix.name }}
+        run: |
+          cd ${{ matrix.dir }}
+          script -e -c "stty rows 60 cols 160
+          devbox run ${{ matrix.task }}" /dev/null
 
-      - name: Upload PDF
+      - name: Upload PDF ${{ matrix.name }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: pdf
-          path: kubexporter_kubernetes_backup_better_together.pdf
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.dir }}/${{ matrix.file }}

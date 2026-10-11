@@ -1,21 +1,29 @@
 {
   "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.17.5/.schema/devbox.schema.json",
   "packages": [
-    "presenterm@latest",
-    "mermaid-cli@latest",
-    "python314Packages.weasyprint@latest"
+    "presenterm@0.16.1",
+    "mermaid-cli@11.16.0",
+    "python314Packages.weasyprint@69.0",
+    "bat@0.26.1"
   ],
   "env": {
-    "PRESENTATION_FILE": "kubexporter_kubernetes_backup_better_together.md"
+    "DEVCON_PRESENTATION_FILE": "kubexporter_kubernetes_backup_better_together.md",
+    "KUBEXPORTER_PRESENTATION_FILE": "kubexporter/kubexporter.md"
   },
   "shell": {
 
     "scripts": {
-      "present": [
-        "presenterm ${PRESENTATION_FILE} -c config.yaml -x"
+      "devcon-present": [
+        "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml -x"
       ],
-      "pdf": [
-        "presenterm ${PRESENTATION_FILE} -c config.yaml -e"
+      "devcon-pdf": [
+        "presenterm ${DEVCON_PRESENTATION_FILE} -c config.yaml -e"
+      ],
+      "kubexporter-present": [
+        "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml -x"
+      ],
+      "kubexporter-pdf": [
+        "presenterm ${KUBEXPORTER_PRESENTATION_FILE} -c config.yaml -e"
       ]
     }
   }

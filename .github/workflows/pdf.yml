@@ -12,21 +12,17 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: pdf
+          - name: devcon
             dir: .
-            task: devcon-pdf
-            artifact: pdf
+            task: pdf
             file: kubexporter_kubernetes_backup_better_together.pdf
-            html_task: devcon-html
-            html_artifact: html
+            html_task: html
             html_file: kubexporter_kubernetes_backup_better_together.html
-          - name: pdf-kubexporter
+          - name: kubexporter
             dir: kubexporter
-            task: kubexporter-pdf
-            artifact: pdf-kubexporter
+            task: k-pdf
             file: kubexporter.pdf
-            html_task: kubexporter-html
-            html_artifact: html-kubexporter
+            html_task: k-html
             html_file: kubexporter.html
     steps:
       - name: Checkout
@@ -49,7 +45,7 @@ jobs:
       - name: Upload PDF ${{ matrix.name }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: ${{ matrix.artifact }}
+          name: ${{ matrix.name }}-pdf
           path: ${{ matrix.dir }}/${{ matrix.file }}
 
       - name: Generate HTML ${{ matrix.name }}
@@ -61,5 +57,5 @@ jobs:
       - name: Upload HTML ${{ matrix.name }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: ${{ matrix.html_artifact }}
+          name: ${{ matrix.name }}-html
           path: ${{ matrix.dir }}/${{ matrix.html_file }}

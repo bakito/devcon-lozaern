@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: otel-collector
+  namespace: otel
+spec:
+  selector:
+    app: otel-collector
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 4317
+      targetPort: 4317
+      nodePort: 32317

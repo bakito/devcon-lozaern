@@ -1,6 +1,6 @@
-<!-- newlines: 16 -->
+<!-- newlines: 5 -->
 
-![](kubexporter.png)
+![image:width:30%](kubexporter.png)
 
 KubExporter - (kubernetes) Backup better. Together.
 ====
@@ -66,7 +66,7 @@ KubExporter - (kubernetes) Backup better. Together.
 ```bash +exec +acquire_terminal
 clear
 cd "${DEVBOX_PROJECT_ROOT}/kubexporter"
-kubexporter --config demo-config.yaml -p bar --summary=true
+kubexporter --config demo-config.yaml -p bar --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."
 ```

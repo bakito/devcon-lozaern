@@ -57,6 +57,12 @@
       ],
       "kind-destroy": [
         "kind delete cluster --name kubexporter-demo"
+      ],
+      "font-big": [
+        "sed -i 's/^font-size = .*/font-size = 24/' ~/.config/ghostty/config.ghostty"
+      ],
+      "font-reset": [
+        "sed -i 's/^font-size = .*/font-size = 12/' ~/.config/ghostty/config.ghostty"
       ]
     }
   }

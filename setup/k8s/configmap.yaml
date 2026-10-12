@@ -15,6 +15,11 @@ data:
       - kubexporter-test
       - kube-system
     considerOwnerReferences: true
+    metrics:
+      otlp:
+        enabled: true
+        endpoint: otel-collector:4317
+        insecure: true
     excluded:
       kinds:
         - Pod

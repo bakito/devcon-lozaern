@@ -7,8 +7,7 @@
     "bat@0.26.1",
     "expect@5.45.4",
     "kind@0.32.0",
-    "kubectl@1.36.3",
-    "tilt@0.37.6"
+    "kubectl@1.36.3"
   ],
   "env": {
     "SLIDES": "kubexporter_kubernetes_backup_better_together.md",
@@ -31,7 +30,8 @@
         "presenterm ${SLIDES} -c config.yaml --export-html"
       ],
       "k-present": [
-        "tilt up -- --once && tilt down",
+        "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
+        "kind export kubeconfig --name kubexporter-demo >/dev/null",
         "presenterm ${KUBEXPORTER_SLIDES} -c config.yaml -x"
       ],
       "k-pdf": [
@@ -53,10 +53,9 @@
         "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-html"
       ],
       "kind-setup": [
-        "tilt up"
+        "bash setup/setup.sh"
       ],
       "kind-destroy": [
-        "tilt down",
         "kind delete cluster --name kubexporter-demo"
       ],
       "font-big": [

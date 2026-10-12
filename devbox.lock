@@ -355,44 +355,6 @@
           "store_path": "/nix/store/w3nv4mhcyyz6vdask0lcmk3y6iv1cjrs-python3.14-weasyprint-69.0"
         }
       }
-    },
-    "tilt@0.37.6": {
-      "last_modified": "2026-08-27T07:16:00Z",
-      "resolved": "github:NixOS/nixpkgs/c27cdad491a991b11ed731760aa2ef8db0cb0410#tilt",
-      "source": "devbox-search",
-      "version": "0.37.6",
-      "systems": {
-        "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/g8ydjgydz3513fr8jzm5nbicf2ahfn15-tilt-0.37.6",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/g8ydjgydz3513fr8jzm5nbicf2ahfn15-tilt-0.37.6"
-        },
-        "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/cfv07a38yh51d4ikdqz31g35q9p64lvm-tilt-0.37.6",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/cfv07a38yh51d4ikdqz31g35q9p64lvm-tilt-0.37.6"
-        },
-        "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/41ydpm4hq4zwkka8crjyvxx5sjz6z5iw-tilt-0.37.6",
-              "default": true
-            }
-          ],
-          "store_path": "/nix/store/41ydpm4hq4zwkka8crjyvxx5sjz6z5iw-tilt-0.37.6"
-        }
-      }
     }
   }
 }

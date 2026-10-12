@@ -20,9 +20,9 @@ jobs:
             html_file: kubexporter_kubernetes_backup_better_together.html
           - name: kubexporter
             dir: kubexporter
-            pdf_task: k-pdf
+            pdf_task: ci-k-pdf
             pdf_file: kubexporter.pdf
-            html_task: k-html
+            html_task: ci-k-html
             html_file: kubexporter.html
     steps:
       - name: Checkout

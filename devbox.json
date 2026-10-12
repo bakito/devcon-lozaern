@@ -22,36 +22,36 @@
     ],
     "scripts": {
       "present": [
-        "presenterm ${SLIDES} -c config.yaml -x"
+        "presenterm ${SLIDES} -c presenterm-config.yaml -x"
       ],
       "pdf": [
-        "presenterm ${SLIDES} -c config.yaml --export-pdf"
+        "presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"
       ],
       "html": [
-        "presenterm ${SLIDES} -c config.yaml --export-html"
+        "presenterm ${SLIDES} -c presenterm-config.yaml --export-html"
       ],
       "k-present": [
         "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
         "kind export kubeconfig --name kubexporter-demo >/dev/null",
-        "presenterm ${KUBEXPORTER_SLIDES} -c config.yaml -x"
+        "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml -x"
       ],
       "k-pdf": [
-        "presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-pdf"
+        "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-pdf"
       ],
       "k-html": [
-        "presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-html"
+        "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-html"
       ],
-      "pdf-export": [
-        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c config.yaml --export-pdf"
+      "ci-pdf-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"
       ],
-      "html-export": [
-        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c config.yaml --export-html"
+      "ci-html-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c presenterm-config.yaml --export-html"
       ],
-      "k-pdf-export": [
-        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-pdf"
+      "ci-k-pdf-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-pdf"
       ],
-      "k-html-export": [
-        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-html"
+      "ci-k-html-export": [
+        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-html"
       ],
       "kind-setup": [
         "bash setup/setup.sh"

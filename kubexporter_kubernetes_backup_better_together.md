@@ -70,6 +70,15 @@ kubexporter --config demo-config.yaml -p bar --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."
 ```
+<!-- end_slide -->
+
+# Demo Otel Metrics
+
+If configures, otel metrics will be pushed to the otel collector if the sync is finished.
+
+```bash +exec +pty:150:50
+kubectl logs -l app=otel-collector -n otel --tail=-1
+```
 
 <!-- end_slide -->
 ---

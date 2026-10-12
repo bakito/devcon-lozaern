@@ -12,8 +12,14 @@ data:
             endpoint: 0.0.0.0:4317
     exporters:
       debug:
-        verbosity: detailed
+        verbosity: normal
+        sampling_initial: 1
+        sampling_thereafter: 1
+        use_internal_logger: false
     service:
+      telemetry:
+        logs:
+          level: warn
       pipelines:
         metrics:
           receivers: [otlp]

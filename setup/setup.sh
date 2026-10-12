@@ -22,7 +22,7 @@ echo "🐳 [1/7] Creating kind cluster '${CLUSTER_NAME}' ..."
 EXISTING_CLUSTERS="$(kind get clusters 2>/dev/null || true)"
 if grep -qx "${CLUSTER_NAME}" <<<"${EXISTING_CLUSTERS}"; then
     echo "  ♻️  Cluster '${CLUSTER_NAME}' already exists — skipping creation."
-elif ! CREATE_OUTPUT="$(kind create cluster --name "${CLUSTER_NAME}" --wait 60s 2>&1)"; then
+elif ! CREATE_OUTPUT="$(kind create cluster --name "${CLUSTER_NAME}" --config kind-cluster.yaml --wait 60s 2>&1)"; then
     if grep -q "already exist" <<<"${CREATE_OUTPUT}"; then
         echo "  ♻️  Cluster '${CLUSTER_NAME}' already exists — skipping creation."
     else

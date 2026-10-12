@@ -7,12 +7,13 @@
     "bat@0.26.1",
     "expect@5.45.4",
     "kind@0.32.0",
-    "kubectl@1.36.3"
+    "kubectl@1.36.3",
+    "k9s@0.51.0"
   ],
   "env": {
-    "SLIDES": "kubexporter_kubernetes_backup_better_together.md",
+    "SLIDES":             "kubexporter_kubernetes_backup_better_together.md",
     "KUBEXPORTER_SLIDES": "kubexporter/kubexporter.md",
-    "KUBECONFIG": "$HOME/.kube/kind/kubeconfig/kubexporter-demo"
+    "KUBECONFIG":         "$HOME/.kube/kind/kubeconfig/kubexporter-demo"
   },
   "shell": {
     "init_hook": [

@@ -5,7 +5,7 @@ summary: true
 progress: simple
 worker: 4
 namespaces:
-  - cert-manager
+  - kubexporter-test
   - kube-system
 considerOwnerReferences: true
 excluded:

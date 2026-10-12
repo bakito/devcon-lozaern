@@ -76,6 +76,12 @@ source /path/to/devcon-lozaern/setup/completion.bash
 
 ### Kubexporter Presentation
 
+The live demos run against the kind cluster `kubexporter-demo` (namespace `kubexporter-test`) created by `setup/setup.sh` (`devbox run kind-setup`). `devbox run k-present` creates the cluster first if it does not exist yet.
+
 - **Run presentation**: `devbox run k-present`
 - **Export to PDF**: `devbox run k-pdf`
 - **Export to HTML**: `devbox run k-html`
+
+## excalidraw
+
+https://excalidraw.com/#json=ITgkNv-ASxc4PULGVwdSc,x1iq3B_XlabKcnKE5INLXw

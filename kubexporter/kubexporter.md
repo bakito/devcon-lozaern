@@ -12,7 +12,7 @@ options:
 
 ![image:width:20%](../kubexporter.png)
 
-Run: `presenterm -x -X kubexporter/kubexporter.md`
+Run: `devbox run k-present` (uses the kind cluster `kubexporter-demo` from `setup/setup.sh`)
 
 ---
 
@@ -131,10 +131,10 @@ flowchart LR
 Live Demo: first export
 ===
 
-`demo-config.yaml` limits the export to `cert-manager` and `kube-system` (kinds without instances are filtered from the summary):
+`demo-config.yaml` limits the export to `kubexporter-test` and `kube-system` of the kind cluster `kubexporter-demo` (kinds without instances are filtered from the summary):
 
 ```bash +exec +pty:150:40
-cd docs/presentation 2>/dev/null || true
+cd "${DEVBOX_PROJECT_ROOT}/kubexporter"
 kubexporter --config demo-config.yaml | grep -vE ' yes +0 +0 '
 ```
 
@@ -263,7 +263,7 @@ encrypted:
 <!-- pause -->
 
 ```bash +exec +pty:120:19
-cut -c1-80 /tmp/kubexporter-demo/exports/cert-manager/Secret.cert-manager-webhook-ca.yaml | bat -l yaml
+cut -c1-80 /tmp/kubexporter-demo/exports/kubexporter-test/Secret.kubexporter-secret.yaml | bat -l yaml
 ```
 
 ---
@@ -272,7 +272,7 @@ Decrypt (AES)
 ===
 
 ```bash +exec +pty:120:23
-cp /tmp/kubexporter-demo/exports/cert-manager/Secret.cert-manager-webhook-ca.yaml /tmp/kubexporter-demo/secret.yaml
+cp /tmp/kubexporter-demo/exports/kubexporter-test/Secret.kubexporter-secret.yaml /tmp/kubexporter-demo/secret.yaml
 kubexporter decrypt --aes-key 12345678901234567890123456789012 /tmp/kubexporter-demo/secret.yaml
 cut -c1-80 /tmp/kubexporter-demo/secret.yaml | bat -l yaml
 ```
@@ -329,7 +329,7 @@ sequenceDiagram
 ```bash
 kubexporter update-owner-references
  FILE                                    OWNER KIND  OWNER NAME  UID FROM   UID TO
- cert-manager/cilium.io.CiliumEndpoint…  Pod         cert-…      1d49…hhhh  1d49…db54
+ kubexporter-test/apps.Deployment.…     Deployment  kubexp…    1d49…hhhh  1d49…db54
 ```
 
 ---
@@ -458,7 +458,7 @@ UX: progress & summary
 * `-v / --verbose` → list errors in summary, `-q / --quiet` → no output
 
 ```bash +exec +pty:120:30
-kubexporter -n cert-manager -i ConfigMap,Secret -t /tmp/kubexporter-demo/ux -c \
+kubexporter -n kubexporter-test -i ConfigMap,Secret -t /tmp/kubexporter-demo/ux -c \
   -p simple --summary --size 2>&1
 ```
 
@@ -473,6 +473,7 @@ The `bar` and `bubbles` modes need a real, interactive terminal.
 
 ```bash +exec +acquire_terminal
 clear
+cd "${DEVBOX_PROJECT_ROOT}/kubexporter"
 kubexporter --config demo-config.yaml -p bar --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."
@@ -482,6 +483,7 @@ read -n 1 -s -r -p "Press any key to return to the presentation..."
 
 ```bash +exec +acquire_terminal
 clear
+cd "${DEVBOX_PROJECT_ROOT}/kubexporter"
 kubexporter --config demo-config.yaml -p bubbles --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."

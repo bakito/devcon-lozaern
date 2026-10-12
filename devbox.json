@@ -5,13 +5,20 @@
     "mermaid-cli@11.16.0",
     "python314Packages.weasyprint@69.0",
     "bat@0.26.1",
-    "expect@5.45.4"
+    "expect@5.45.4",
+    "kind@0.32.0",
+    "kubectl@1.36.3"
   ],
   "env": {
     "SLIDES": "kubexporter_kubernetes_backup_better_together.md",
-    "KUBEXPORTER_SLIDES": "kubexporter/kubexporter.md"
+    "KUBEXPORTER_SLIDES": "kubexporter/kubexporter.md",
+    "KUBECONFIG": "$HOME/.kube/kind/kubeconfig/kubexporter-demo"
   },
   "shell": {
+    "init_hook": [
+      "alias dbrun='devbox run'",
+      "case $- in *i*) . \"${DEVBOX_PROJECT_ROOT}/setup/completion.bash\" ;; esac"
+    ],
     "scripts": {
       "present": [
         "presenterm ${SLIDES} -c config.yaml -x"
@@ -42,6 +49,12 @@
       ],
       "k-html-export": [
         "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c config.yaml --export-html"
+      ],
+      "kind-setup": [
+        "bash setup/setup.sh"
+      ],
+      "kind-destroy": [
+        "kind delete cluster --name kubexporter-demo"
       ]
     }
   }

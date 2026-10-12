@@ -52,6 +52,22 @@ devbox shell
 
 ## Devbox Tasks
 
+### Tab Completion
+
+Inside `devbox shell` the alias `dbrun` (short for `devbox run`, defined in the `init_hook` of `devbox.json`) is available, and tab completion for devbox task names (`devbox run <TAB>`, `dbrun <TAB>` and the `dbr` alias) is enabled automatically.
+
+To use it outside of `devbox shell`, load it manually in bash or zsh:
+
+```bash
+source setup/completion.bash
+```
+
+Or enable it permanently by adding this line to your `~/.bashrc` or `~/.zshrc`:
+
+```bash
+source /path/to/devcon-lozaern/setup/completion.bash
+```
+
 ### DevCon Presentation
 
 - **Run presentation**: `devbox run present`

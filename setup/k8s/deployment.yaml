@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubexporter-demo
+  namespace: kubexporter-test
+  labels:
+    app: kubexporter-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubexporter-demo
+  template:
+    metadata:
+      labels:
+        app: kubexporter-demo
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: kubexporter-config
+            - secretRef:
+                name: kubexporter-secret

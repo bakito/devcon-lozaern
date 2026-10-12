@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubexporter-config
+  namespace: kubexporter-test
+data:
+  config.yaml: |
+    # kubexporter demo configuration used by the presentation (kubexporter.md)
+    target: /tmp/kubexporter-demo/exports
+    clearTarget: true
+    summary: true
+    progress: simple
+    worker: 4
+    namespaces:
+      - cert-manager
+      - kube-system
+    considerOwnerReferences: true
+    excluded:
+      kinds:
+        - Pod
+        - Event
+        - events.k8s.io.Event
+        - Endpoints
+        - discovery.k8s.io.EndpointSlice
+        - coordination.k8s.io.Lease
+        - apps.ReplicaSet
+        - apps.ControllerRevision
+        - batch.Job
+      fields:
+        - [status]
+        - [metadata, uid]
+        - [metadata, resourceVersion]
+        - [metadata, creationTimestamp]
+        - [metadata, generation]
+        - [metadata, managedFields]
+        - [metadata, annotations, "kubectl.kubernetes.io/last-applied-configuration"]
+      kindFields:
+        Service:
+          - [spec, clusterIP]
+          - [spec, clusterIPs]
+      kindByField:
+        Secret:
+          - field: [type]
+            values: ['helm.sh/release.v1']
+    masked:
+      replacement: '***'
+      checksum: sha256
+      kindFields:
+        ConfigMap:
+          - [data, token]
+    encrypted:
+      aesKey: "12345678901234567890123456789012"
+      kindFields:
+        Secret:
+          - [data]
+          - [stringData]
+    sortSlices:
+      rbac.authorization.k8s.io.ClusterRole:
+        - [rules]

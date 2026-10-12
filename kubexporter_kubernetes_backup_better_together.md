@@ -72,12 +72,32 @@ read -n 1 -s -r -p "Press any key to return to the presentation..."
 ```
 <!-- end_slide -->
 
-# Demo Otel Metrics
+# Demo otel (OpenTelemetry) Metrics
 
-If configures, otel metrics will be pushed to the otel collector if the sync is finished.
+If configures, metrics will be pushed to the otel collector if the sync is finished.
+<!-- alignment: center -->
 
-```bash +exec +pty:150:50
-kubectl logs -l app=otel-collector -n otel --tail=-1
+| Metric                                       | Description                                        |
+|----------------------------------------------|----------------------------------------------------|
+| kubexporter.duration_seconds                 | Total export duration in seconds                   |
+| kubexporter.errors                           | Number of errors encountered during export         |
+| kubexporter.exported_resources               | Total number of exported resources                 |
+| kubexporter.exported_size_bytes              | Total size of exported resources in bytes          |
+| kubexporter.kinds                            | Number of kinds processed                          |
+| kubexporter.namespaces                       | Number of namespaces containing exported resources |
+| kubexporter.query_pages                      | Total number of query pages requested              |
+| kubexporter.resource.export_duration_seconds | Export duration per kind in seconds                |
+| kubexporter.resource.exported_instances      | Number of exported resource instances per kind     |
+| kubexporter.resource.exported_size_bytes     | Size of exported resources per kind in bytes       |
+| kubexporter.resource.instances               | Number of resource instances found per kind        |
+| kubexporter.resource.query_duration_seconds  | Query duration per kind in seconds                 |
+| kubexporter.resource.query_pages             | Number of query pages per kind                     |
+
+
+<!-- newlines: 2 -->
+
+```bash +exec +pty:150:30
+kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances
 ```
 
 <!-- end_slide -->

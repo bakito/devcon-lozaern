@@ -18,7 +18,7 @@ data:
     metrics:
       otlp:
         enabled: true
-        endpoint: otel-collector:4317
+        endpoint: otel-collector.otel.svc.cluster.local:4317
         insecure: true
     excluded:
       kinds:

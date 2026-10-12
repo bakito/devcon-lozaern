@@ -11,7 +11,7 @@ considerOwnerReferences: true
 metrics:
   otlp:
     enabled: true
-    endpoint: localhost:34317
+    endpoint: localhost:4317
     insecure: true
 excluded:
   kinds:

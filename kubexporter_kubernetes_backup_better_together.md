@@ -2,7 +2,7 @@
 
 ![](kubexporter.png)
 
-kubexporter - (kubernetes) Backup better. Together.
+KubExporter - (kubernetes) Backup better. Together.
 ====
 
 <!-- alignment: center -->
@@ -10,21 +10,65 @@ kubexporter - (kubernetes) Backup better. Together.
 <span style="color: blue">Raphael Müller / Marc Brugger</span>
 <!-- end_slide -->
 
-Running kubexporter to export your kubernetes resources:
+# Origin
 
 <!-- incremental_lists: true -->
-* parallel export worker
-* different progress formats
-* s3 / google storage bucket support
-* secret masking or encryption
-* otlp metrics
-* owner reference migration
+* Community product based on Ruby was used to backup kubernetes resources
+  * All resources needed explicitly be defined in config - otherwise they were not backupped
+  * Export took of one cluster took mor than one hour
+  * After introducing a new CRD to the cluster they got not added to the config -> we had no backups when we needed them
 <!-- incremental_lists: false -->
+
+
+<!-- incremental_lists: true -->
+* Decision to implement a new backup tool in Go
+  * Opt-Out instead of Opt-In (All resources are included by default)
+  * Export duration reduced to < 30s
+  * Runs as CronJob -> No permanent resources needed
+  * Export to git -> complete history available
+<!-- incremental_lists: false -->
+
+<!-- end_slide -->
+
+# Why OpenSource
+
+<!-- incremental_lists: true -->
+* Most of the time invested in private outside the company
+* OpenSource -> community driven development
+* New features are requested/added by the community
+* Accessible for everyone
+  * Apache 2.0 License
+* Integration in existing Package/Plugin managers
+  * ❄️ nix
+  * 🍺 brew
+  * 🔌 krew (kubectl plugin)
+<!-- incremental_lists: false -->
+
+<!-- end_slide -->
+
+# Features
+
+<!-- incremental_lists: true -->
+* 🗲 parallel export worker
+* 📊 different progress formats
+* ☁️ s3 / google storage bucket support
+* 🔐 secret masking or encryption (age/AES)
+* 📈 otlp metrics
+* 🔄 owner reference migration (re-import with updated owner references)
+<!-- incremental_lists: false -->
+
+<!-- end_slide -->
+
+# Demo
 
 (Press `ctrl + e` to execute)
 
-```bash +exec +pty:80:30
-kubexporter -w 5 --progress simple
+```bash +exec +acquire_terminal
+clear
+cd "${DEVBOX_PROJECT_ROOT}/kubexporter"
+kubexporter --config demo-config.yaml -p bar --summary=true
+echo
+read -n 1 -s -r -p "Press any key to return to the presentation..."
 ```
 
 <!-- end_slide -->
@@ -32,7 +76,7 @@ kubexporter -w 5 --progress simple
 
 ```mermaid +render +width:50%
 sequenceDiagram
-    Mark --> Bob: Hello!
-    Bob --> Mark: Oh, hi mark!
+    Tim --> Bob: Hello!
+    Bob --> Tim: Oh, hi Tim!
 ```
 

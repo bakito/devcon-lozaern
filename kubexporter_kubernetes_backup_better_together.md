@@ -1,13 +1,27 @@
+---
+theme:
+  override:
+    footer:
+      style: template
+      left: '**DevCon Lozärn 23.10.2026**'
+      height: 3
+    palette:
+      classes:
+        noice:
+          foreground: red
+---
+
 <!-- newlines: 5 -->
 
 ![image:width:30%](kubexporter.png)
 
-KubExporter - (kubernetes) Backup better. Together.
+KubExporter  
+(kubernetes) Backup better. Together.
 ====
 
 <!-- alignment: center -->
 
-<span style="color: blue">Raphael Müller / Marc Brugger</span>
+<span style="color: #2e6ce6">Raphael Müller / Concordia &nbsp;&nbsp; Marc Brugger / Bison Group</span>
 <!-- end_slide -->
 
 # Origin

@@ -16,4 +16,4 @@ transition:
 export:
   dimensions:
     columns: 120
-    rows: 30
+    rows: 40

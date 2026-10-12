@@ -28,7 +28,8 @@
         "presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"
       ],
       "html": [
-        "presenterm ${SLIDES} -c presenterm-config.yaml --export-html"
+        "presenterm ${SLIDES} -c presenterm-config.yaml --export-html",
+        "bash setup/center-html.sh kubexporter_kubernetes_backup_better_together.html"
       ],
       "k-present": [
         "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
@@ -39,7 +40,8 @@
         "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-pdf"
       ],
       "k-html": [
-        "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-html"
+        "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-html",
+        "bash setup/center-html.sh kubexporter_kubernetes_backup_better_together.html"
       ],
       "ci-pdf-export": [
         "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"

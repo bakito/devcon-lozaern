@@ -4,8 +4,9 @@ Kubexporter im Schnelldurchlauf
 
 <!-- incremental_lists: true -->
 
-* **Kubexporter Schedulen**: Ein k8s-(Cron)-Job und schon wird gebackupt
+* **Kubexporter Schedulen**: Ein k8s-(Cron)-Job oder ein cli-command und schon wird gebackupt
 * **Storage**: Von einem einfachen PV zu S3 und HyperScaler Cloudstorage: alles geht
+* **Verschlüsselung**: Secrets aus-sterndlen ***, AES oder AGE verschlüsseln
 * **Restore**: Ganze Directories, einzelne Dateien oder einfach nur "güxle" in Git
 
 
@@ -13,37 +14,38 @@ Kubexporter im Schnelldurchlauf
 
 <!-- end_slide -->
 
-# Gängige Kubernetes Backup-Tools
+# Warum das alles wirklich praktisch ist
 
-Wenn man über Kubernetes-Backups spricht, fallen meistens diese Namen:
+Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original gefunden ?
 
 <!-- incremental_lists: true -->
 
-* **Enterprise- & All-in-One-Lösungen**
-  * **Velero** (Der Open-Source-Standard von VMware)
-  * **Kasten K10** (Veeam – stark im Enterprise-Umfeld)
-  * **TrilioVault** (Fokus auf Cloud-Native & App-Sicherung)
-* **Storage- & Snapshot-Fokussiert**
-  * **Longhorn** (Eingebautes Backup für verteilten Storage)
-  * **OADP** (Red Hat Produkt welches auf Velero aufsetzt)
-  * **Portworx PX-Backup** (Fokus auf Multi-Cloud-Storage)
+* **Ressourcen Ressourcen Ressourcen**
+  * **CR's welche nicht unter Git/Argo Kontrolle waren** (Der Klassiker)
+  * **ConfigMaps, Secrets oder andere Resouce-Definitionen welche abhanden kamen** (Soll es auch im professionellen Umfeld geben)
+  * **Cluster eigene Resourcen welche sich geändert haben** (Wer kennt OLM ?)
+  * **RBAC, Service-Accounts und Konsorten** (Haben wir das nicht ge-Gitopst ?)
+* **Murphy is in the house**
+  * **Namespace Configs** (Aber ich dachte, wir hätten ...)
+  * **Cluster Upgrades** (War vor dem Upgrade ganze sicher anders)
+  * **Fat Fingers** (Ooops I did it again)
 
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
 
-# Persistente Daten vs. Konfiguration
+# Diff is your friend
 
-Die genannten Tools sind mächtig, haben aber oft einen Haken:
-Sie sind darauf ausgelegt, auch persistente Volumes (PVs) zu sichern.
+Config vor und nach der Änderung vergleichen: yep
+Audit-Log zeigt in eine bestimmte Richtung ?: vergleichen wir die Config
 
-### Unsere Philosophie:
+### Git is your friend
 
 <!-- incremental_lists: true -->
 
-* Wir wollen **keine** persistenten Daten innerhalb von Kubernetes betreiben.
-* Statuserhaltende Daten gehören **ausserhalb** des Clusters gesichert.
-* **Was wir wirklich brauchen:** Eine reine Sicherung der Config-Ressourcen!
+* Einfache Intregration in eine Git basierte Versionsverwaltung
+* Git eigene Commit History hilft enorm
+* **Git Repo Magic** Repositories können durch Git Tooling verwaltet werden
 
 <!-- incremental_lists: false -->
 

@@ -23,7 +23,7 @@ Wenn man über Kubernetes-Backups spricht, fallen meistens diese Namen:
   * **TrilioVault** (Fokus auf Cloud-Native & App-Sicherung)
 * **Storage- & Snapshot-Fokussiert**
   * **Longhorn** (Eingebautes Backup für verteilten Storage)
-  * **OADP** (OpenShift API for Data Protection – Red Hat)
+  * **OADP** (Red Hat Produkt welches auf Velero aufsetzt)
   * **Portworx PX-Backup** (Fokus auf Multi-Cloud-Storage)
 
 <!-- incremental_lists: false -->
@@ -50,7 +50,7 @@ Sie sind darauf ausgelegt, auch persistente Volumes (PVs) zu sichern.
 # Die Lösung: KubExporter
 
 Auf GitHub finden wir genau das Werkzeug, das uns diese Arbeit abnimmt:
-👉 `https://github.com`
+👉 `https://github.com/bakito/kubexporter`
 
 > "KubExporter allows you to export resources from kubernetes as yaml/json files."
 
@@ -61,7 +61,7 @@ Auf GitHub finden wir genau das Werkzeug, das uns diese Arbeit abnimmt:
 <!-- incremental_lists: true -->
 
 * **Automatische Erkennung**: Exportiert standardmässig alle Ressourcen. Neue CRDs werden automatisch erfasst.
-* **Flexibilität**: Exportiert wahlweise als **YAML**, **JSON** oder **kyaml**.
+* **Flexibilität**: Exportiert wahlweise als **YAML**, **JSON** oder **kubernets yaml/kyaml**.
 * **Bereinigung**: Unerwünschte Ressourcen und Standard-Metadaten lassen sich gezielt ausschliessen.
 
 <!-- incremental_lists: false -->
@@ -96,6 +96,8 @@ KubExporter bietet nativen Support für moderne GitOps- und Backup-Workflows:
 * 📦 **Archivierung**: Direktes Packen als `.tar.gz` mit Upload in **S3** oder **GCS**.
 * 🔐 **Security**: Integrierte Ver- und Entschlüsselung von Secrets mittels **Age** oder **AES**.
 * 📊 **Monitoring**: Liefert OTel-Metriken inklusive vorgefertigtem **Grafana-Dashboard**.
+* 🦉 **Versionskontrolle**: Exporte lassen sich einfach in eine Git-Versionierung integrieren.
+
 
 <!-- incremental_lists: false -->
 

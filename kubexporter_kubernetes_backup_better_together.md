@@ -24,7 +24,11 @@ KubExporter
 <span style="color: #2e6ce6">Raphael Müller / Concordia &nbsp;&nbsp; Marc Brugger / Bison Group</span>
 <!-- end_slide -->
 
-# Origin
+<!-- include: kubexporter_intro.md -->
+
+<!-- end_slide -->
+
+# Ursprung
 
 <!-- incremental_lists: true -->
 
@@ -34,7 +38,6 @@ KubExporter
     * After introducing a new CRD to the cluster they got not added to the config -> we had no backups when we needed them
 
 <!-- incremental_lists: false -->
-
 
 <!-- incremental_lists: true -->
 

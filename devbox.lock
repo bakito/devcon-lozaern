@@ -268,6 +268,44 @@
         }
       }
     },
+    "kubexporter@0.9.1": {
+      "last_modified": "2026-10-02T22:55:44Z",
+      "resolved": "github:NixOS/nixpkgs/55ba7f49ef2962b42cbd126522b7df5f95037679#kubexporter",
+      "source": "devbox-search",
+      "version": "0.9.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/015yjfpdl5cf6cszw9qfg3vk7p50ypyf-kubexporter-0.9.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/015yjfpdl5cf6cszw9qfg3vk7p50ypyf-kubexporter-0.9.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6q5r9xnr9blvx136irh4sjbnxmaapnvm-kubexporter-0.9.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6q5r9xnr9blvx136irh4sjbnxmaapnvm-kubexporter-0.9.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/klkv2rsk5yic6n6mh5smwrxvf7j43v34-kubexporter-0.9.1",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/klkv2rsk5yic6n6mh5smwrxvf7j43v34-kubexporter-0.9.1"
+        }
+      }
+    },
     "mermaid-cli@11.16.0": {
       "last_modified": "2026-08-28T08:26:42Z",
       "resolved": "github:NixOS/nixpkgs/0e7911a191ea0fb9d6e8e771d24736d3618f8b1f#mermaid-cli",

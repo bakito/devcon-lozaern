@@ -26,11 +26,8 @@ KubExporter
 
 <!-- include: kubexporter_intro.md -->
 
-<!-- end_slide -->
-
 # Ursprung
 
-<!-- incremental_lists: true -->
 <!-- incremental_lists: true -->
 
 * Community-Produkt auf Ruby-Basis wurde verwendet, um Kubernetes-Ressourcen zu sichern

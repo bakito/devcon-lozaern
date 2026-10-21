@@ -13,7 +13,3 @@ transition:
   animation:
     style: slide_horizontal
 
-export:
-  dimensions:
-    columns: 120
-    rows: 40

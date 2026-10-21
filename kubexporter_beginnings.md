@@ -4,8 +4,8 @@ Kubexporter History
 
 <!-- incremental_lists: true -->
 
-* **Marc Brugger aka Bakito**: Das geht besser Mindset - und Morgen gibt es die Lösung auf Github
-* **Raphael Müller aka Raphi**: Das KISS-Prinzip hat mich seit 1998 - Einfache Dinge zuerst
+* **Marc Brugger aka Bakito**: "Das geht besser"-Mindset - und Morgen gibt es die Lösung auf Github
+* **Raphael Müller aka Raphi Milla**: "KISS-Prinzip"-Mindset - Einfache Dinge zuerst
 
 
 <!-- incremental_lists: false -->
@@ -28,30 +28,13 @@ Plötzlich konnten Abläufe die in der alten Welt Monate brauchten, innerhalb 24
 
 * **Warum sind wir hier ?**
   * **OpenSource hilft bei der Zusammenarbeit auch in neuen Firmen** (Marc Bison, Raphi CONCORDIA)
-  * **OpenSource hilft verbunden zu blieben** (PR's und )
+  * **OpenSource hilft verbunden zu blieben** (und wenn nur schon über PR's und Issues)
   * **OpenSource hilft sich und das Produkt weiter zu entwickeln** (PR's und MR's für neue Features und Ideen)
   * **Opensource hilft anderen Kollegen und Firmen die selben Probleme anzugehen** (Wie macht Ihr ... ?)
-* **Murphy is in the house**
+* **Murphy lauert immer und überall - Begenem wir ihm vorbereitet**
   * **Namespace Configs** (Aber ich dachte, wir hätten ...)
-  * **Cluster Upgrades** (War vor dem Upgrade ganze sicher anders)
+  * **Cluster Upgrades** (War vor dem Upgrade ganz sicher anders)
   * **Fat Fingers** (Ooops I did it again)
-
-<!-- incremental_lists: false -->
-
-<!-- end_slide -->
-
-# Diff is your friend
-
-Config vor und nach der Änderung vergleichen: yep
-Audit-Log zeigt in eine bestimmte Richtung ?: vergleichen wir die Config
-
-### Git is your friend
-
-<!-- incremental_lists: true -->
-
-* Einfache Intregration in eine Git basierte Versionsverwaltung
-* Git eigene Commit History hilft enorm
-* **Git Repo Magic** Repositories können durch Git Tooling verwaltet werden
 
 <!-- incremental_lists: false -->
 
@@ -71,52 +54,7 @@ Auf GitHub finden wir genau das Werkzeug, das uns diese Arbeit abnimmt:
 <!-- incremental_lists: true -->
 
 * **Automatische Erkennung**: Exportiert standardmässig alle Ressourcen. Neue CRDs werden automatisch erfasst.
-* **Flexibilität**: Exportiert wahlweise als **YAML**, **JSON** oder **kubernets yaml/kyaml**.
+* **Flexibilität**: Exportiert wahlweise als **YAML**, **JSON**.
 * **Bereinigung**: Unerwünschte Ressourcen und Standard-Metadaten lassen sich gezielt ausschliessen.
-
-<!-- incremental_lists: false -->
-
-<!-- end_slide -->
-
-# Installation & Verwendung
-
-### Schnelle Installation
-```bash
-# Als kubectl Plugin via Krew
-kubectl krew install exporter
-
-# Oder via Homebrew
-brew install --cask kubexporter
-```
-
-### Einfacher Aufruf
-```bash
-# Exportiert standardmässig in den Ordner "exports"
-kubectl exporter
-```
-
-<!-- end_slide -->
-
-# Advanced Features (Ausblick)
-
-KubExporter bietet nativen Support für moderne GitOps- und Backup-Workflows:
-
-<!-- incremental_lists: true -->
-
-* 📦 **Archivierung**: Direktes Packen als `.tar.gz` mit Upload in **S3** oder **GCS**.
-* 🔐 **Security**: Integrierte Ver- und Entschlüsselung von Secrets mittels **Age** oder **AES**.
-* 📊 **Monitoring**: Liefert OTel-Metriken inklusive vorgefertigtem **Grafana-Dashboard**.
-* 🦉 **Versionskontrolle**: Exporte lassen sich einfach in eine Git-Versionierung integrieren.
-
-
-<!-- incremental_lists: false -->
-
-<!-- end_slide -->
-
-# Fazit
-
-* Container-Backups neu gedacht.
-* Fokus auf das, was zählt: **Die Infrastruktur als Code**.
-* Schlank, effizient und perfekt für die CI/CD-Pipeline.
 
 <!-- end_slide -->

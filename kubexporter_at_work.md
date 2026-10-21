@@ -35,11 +35,15 @@ Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original
 <!-- end_slide -->
 
 # Diff is your friend
+#TODO
+# --> screenshot eines diffs ? 
 
-Config vor und nach der Änderung vergleichen: yep
-Audit-Log zeigt in eine bestimmte Richtung ?: vergleichen wir die Config
+* Config vor und nach der Änderung vergleichen: -> yep
+* Audit-Log zeigt in eine bestimmte Richtung ?: -> vergleichen wir die Config
 
 ### Git is your friend
+#TODO
+# --> screenshot terminal git diff ? 
 
 <!-- incremental_lists: true -->
 

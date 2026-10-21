@@ -22,11 +22,19 @@ KubExporter
 <!-- alignment: center -->
 
 <span style="color: #2e6ce6">Raphael Müller / Concordia &nbsp;&nbsp; Marc Brugger / Bison Group</span>
+
+<!-- end_slide -->
+
+# Include Raphi Slides
+<!-- include: kubexporter_beginnings.md -->
 <!-- end_slide -->
 
 <!-- include: kubexporter_intro.md -->
-
 <!-- end_slide -->
+
+<!-- include: kubexporter_at_work.md -->
+<!-- end_slide -->
+
 
 # Origin
 

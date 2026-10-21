@@ -128,7 +128,7 @@ KubExporter
 
 ```bash +exec +acquire_terminal
 clear
-cd "${DEVBOX_PROJECT_ROOT}/kubexporter"
+cd "${PRESENTATION_ROOT}/kubexporter"
 kubexporter --config demo-config.yaml -p bar --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."
@@ -167,7 +167,7 @@ kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances |
 
 <!-- end_slide -->
 <!-- font_size: 2 -->
-# 
+# Probier mich aus!
 ```text
                                      
   █▀▀▀▀▀█  ▄ ▄ ▄▀█▀ ▀▀▄▀ █▄ █▀▀▀▀▀█  

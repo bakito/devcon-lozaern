@@ -15,7 +15,8 @@
   "env": {
     "SLIDES":             "kubexporter_kubernetes_backup_better_together.md",
     "KUBEXPORTER_SLIDES": "kubexporter/kubexporter.md",
-    "KUBECONFIG":         "$HOME/.kube/kind/kubeconfig/kubexporter-demo"
+    "KUBECONFIG":         "$HOME/.kube/kind/kubeconfig/kubexporter-demo",
+    "PRESENTATION_ROOT":  "${DEVBOX_PROJECT_ROOT}"
   },
   "shell": {
     "init_hook": [
@@ -27,12 +28,7 @@
       "present": [
         "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
         "kind export kubeconfig --name kubexporter-demo >/dev/null",
-        "presenterm ${SLIDES} -c presenterm-config.yaml -x --publish-speaker-notes"
-      ],
-      "present-sn": [
-        "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
-        "kind export kubeconfig --name kubexporter-demo >/dev/null",
-        "presenterm ${SLIDES} -c presenterm-config.yaml --listen-speaker-notes"
+        "presenterm ${SLIDES} -c presenterm-config.yaml -x"
       ],
       "pdf": [
         "presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"

@@ -8,7 +8,11 @@ Wer sind wir?
 
 
 <!-- incremental_lists: false -->
-
+<!-- 
+speaker_note: |
+  something
+  something else
+-->
 <!-- end_slide -->
 <!-- font_size: 2 -->
 

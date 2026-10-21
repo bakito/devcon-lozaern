@@ -27,7 +27,12 @@
       "present": [
         "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
         "kind export kubeconfig --name kubexporter-demo >/dev/null",
-        "presenterm ${SLIDES} -c presenterm-config.yaml -x"
+        "presenterm ${SLIDES} -c presenterm-config.yaml -x --publish-speaker-notes"
+      ],
+      "present-sn": [
+        "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
+        "kind export kubeconfig --name kubexporter-demo >/dev/null",
+        "presenterm ${SLIDES} -c presenterm-config.yaml --listen-speaker-notes"
       ],
       "pdf": [
         "presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"

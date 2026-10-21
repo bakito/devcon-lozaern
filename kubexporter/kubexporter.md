@@ -143,10 +143,6 @@ kubexporter --config demo-config.yaml | grep -vE ' yes +0 +0 '
 Clean, diff-friendly manifests
 ===
 
-<!-- column_layout: [1, 1] -->
-
-<!-- column: 0 -->
-
 ### Global & per-kind field excludes
 
 ```yaml
@@ -167,11 +163,9 @@ excluded:
 
 `preservedFields` → keep a child even if the parent is removed.
 
-<!-- column: 1 -->
-
 ### Result
 
-```bash +exec +pty:90:40
+```bash +exec +pty:200:10
 bat /tmp/kubexporter-demo/exports/kube-system/Service.kube-dns.yaml
 ```
 

@@ -129,7 +129,7 @@ KubExporter
 ```bash +exec +acquire_terminal
 clear
 cd "${DEVBOX_PROJECT_ROOT}/kubexporter"
-~/bin/kubexporter --config demo-config.yaml -p bar --summary=false
+kubexporter --config demo-config.yaml -p bar --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."
 ```

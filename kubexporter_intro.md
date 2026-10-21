@@ -33,14 +33,13 @@ Wenn man über Kubernetes-Backups spricht, fallen meistens diese Namen:
 # Persistente Daten vs. Konfiguration
 
 Die genannten Tools sind mächtig, haben aber oft einen Haken:
-Sie sind darauf ausgelegt, auch persistente Volumes (PVs) zu sichern.
+Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
 
 ### Unsere Philosophie:
 
 <!-- incremental_lists: true -->
 
-* Wir wollen **keine** persistenten Daten innerhalb von Kubernetes betreiben.
-* Statuserhaltende Daten gehören **ausserhalb** des Clusters gesichert.
+* Wir wollen möglichst **keine** persistenten Daten innerhalb von Kubernetes betreiben.
 * **Was wir wirklich brauchen:** Eine reine Sicherung der Config-Ressourcen!
 
 <!-- incremental_lists: false -->
@@ -50,6 +49,9 @@ Sie sind darauf ausgelegt, auch persistente Volumes (PVs) zu sichern.
 # Die Lösung: KubExporter
 
 Auf GitHub finden wir genau das Werkzeug, das uns diese Arbeit abnimmt:
+
+#TODO
+# --> screenshot eines kubexporter file-systems ??
 👉 `https://github.com/bakito/kubexporter`
 
 > "KubExporter allows you to export resources from kubernetes as yaml/json files."
@@ -84,29 +86,5 @@ brew install --cask kubexporter
 # Exportiert standardmässig in den Ordner "exports"
 kubectl exporter
 ```
-
-<!-- end_slide -->
-
-# Advanced Features (Ausblick)
-
-KubExporter bietet nativen Support für moderne GitOps- und Backup-Workflows:
-
-<!-- incremental_lists: true -->
-
-* 📦 **Archivierung**: Direktes Packen als `.tar.gz` mit Upload in **S3** oder **GCS**.
-* 🔐 **Security**: Integrierte Ver- und Entschlüsselung von Secrets mittels **Age** oder **AES**.
-* 📊 **Monitoring**: Liefert OTel-Metriken inklusive vorgefertigtem **Grafana-Dashboard**.
-* 🦉 **Versionskontrolle**: Exporte lassen sich einfach in eine Git-Versionierung integrieren.
-
-
-<!-- incremental_lists: false -->
-
-<!-- end_slide -->
-
-# Fazit
-
-* Container-Backups neu gedacht.
-* Fokus auf das, was zählt: **Die Infrastruktur als Code**.
-* Schlank, effizient und perfekt für die CI/CD-Pipeline.
 
 <!-- end_slide -->

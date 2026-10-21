@@ -22,81 +22,88 @@ KubExporter
 <!-- alignment: center -->
 
 <span style="color: #2e6ce6">Raphael Müller / Concordia &nbsp;&nbsp; Marc Brugger / Bison Group</span>
+
+<!-- end_slide -->
+
+# Include rmu Slides
+<!-- include: kubexporter_beginnings.md -->
 <!-- end_slide -->
 
 <!-- include: kubexporter_intro.md -->
+
+<!-- include: kubexporter_at_work.md -->
+<!-- end_slide -->
 
 # Ursprung
 
 <!-- incremental_lists: true -->
 
-* Community-Produkt auf Ruby-Basis wurde verwendet, um Kubernetes-Ressourcen zu sichern
-    * Alle Ressourcen mussten explizit in der Konfiguration definiert werden – sonst wurden sie nicht gesichert
-    * Ein Export eines Clusters dauerte über eine Stunde
-    * Nach Einführung einer neuen CRD im Cluster wurde diese nicht in die Konfiguration aufgenommen → wir hatten keine Backups, wenn wir sie brauchten
+* Community product based on Ruby was used to backup kubernetes resources
+    * All resources needed explicitly be defined in config - otherwise they were not backupped
+    * Export took of one cluster took mor than one hour
+    * After introducing a new CRD to the cluster they got not added to the config -> we had no backups when we needed them
 
 <!-- incremental_lists: false -->
 
 <!-- incremental_lists: true -->
 
-* Entscheidung, ein neues Backup-Tool in Go zu implementieren
-    * Opt-Out statt Opt-In (Alle Ressourcen sind standardmässig enthalten)
-    * Exportdauer auf < 30s reduziert
-    * Läuft als CronJob → Keine permanenten Ressourcen erforderlich
-    * Export nach Git → Vollständige Historie verfügbar
+* Decision to implement a new backup tool in Go
+    * Opt-Out instead of Opt-In (All resources are included by default)
+    * Export duration reduced to < 30s
+    * Runs as CronJob -> No permanent resources needed
+    * Export to git -> complete history available
 
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
 
-# Warum OpenSource
+# Why OpenSource
 
 <!-- incremental_lists: true -->
 
-* Grossteil der Zeit wurde privat ausserhalb des Unternehmens investiert
-* OpenSource → Community-gesteuerte Entwicklung
-* Neue Features werden von der Community angefordert/hinzugefügt
-* Für alle zugänglich
-    * Apache 2.0-Lizenz
-* Integration in bestehende Paket-/Plugin-Manager
+* Most of the time invested in private outside the company
+* OpenSource -> community driven development
+* New features are requested/added by the community
+* Accessible for everyone
+    * Apache 2.0 License
+* Integration in existing Package/Plugin managers
     * ❄️ nix
     * 🍺 brew
-    * 🔌 krew (kubectl-Plugin)
+    * 🔌 krew (kubectl plugin)
 
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
 
-# Funktionen
+# Features
 
 <!-- incremental_lists: true -->
 
-* 🗲  Parallele Export-Worker
-* 📊 Verschiedene Fortschrittsformate
-* ☁️  S3 / Google Storage Bucket-Unterstützung
-* 🔐 Secret-Maskierung oder -Verschlüsselung (age/AES)
-* 📈 OTLP-Metriken
-* 🔄 Owner-Reference-Migration (Wiederimport mit aktualisierten Owner-References)
-* Möglichkeit für integration in git
+* 🗲 parallel export worker
+* 📊 different progress formats
+* ☁️ s3 / google storage bucket support
+* 🔐 secret masking or encryption (age/AES)
+* 📈 otlp metrics
+* 🔄 owner reference migration (re-import with updated owner references)
 
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
 
-# Wie / wann neue Funktionen hinzufügen?
+# How / when add new features?
 
 <!-- incremental_lists: true -->
 
-* ☁️  S3 / Google Storage Bucket-Unterstützung
-    * Migration in die Cloud, wo Git keine Option war
-* 🔐 Secret-Maskierung oder -Verschlüsselung
-    * Bei der Arbeit mit Git ist es nicht sicher, den Inhalt von Secrets zu committen
-* 📈 OTLP-Metriken
-    * Regression nach Implementierung der Multi-Namespace-Auswahl. KubExporter wurde ohne Fehler beendet, hat aber nichts
-      exportiert → Mit Metriken können wir Alerts basierend auf den Metriken einrichten.
-* 🔄 Owner-Reference-Migration
-    * Ressourcen, die in einem Cluster importiert wurden, in dem die übergeordneten Ressourcen neu erstellt wurden (neue UUID),
-      wurden aufgrund ungültiger Owner-Reference gelöscht
+* ☁️ s3 / google storage bucket support
+    * Moving to cloud, where git was not an option
+* 🔐 Secret masking or encryption
+    * Working with git, it is not safe to commit content of secrets
+* 📈 otlp metrics
+    * Regression after implementing multi-namespace selection. KubExporter terminated without error, but did not export
+      anything -> Having metrics, we can setup alerts, based on the metrics.
+* 🔄 owner reference migration
+    * Resources imported in a cluster where owning resources got re-created (new UUID) got deleted due to invalid owner
+      reference
 
 <!-- incremental_lists: false -->
 
@@ -105,7 +112,7 @@ KubExporter
 
 # Demo
 
-(Drücke `ctrl + e` zum Ausführen)
+(Press `ctrl + e` to execute)
 
 ```bash +exec +acquire_terminal
 clear
@@ -143,3 +150,13 @@ If configures, metrics will be pushed to the otel collector if the sync is finis
 ```bash +exec +pty:150:30
 kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances
 ```
+
+<!-- end_slide -->
+---
+
+```mermaid +render +width:50%
+sequenceDiagram
+    Tim --> Bob: Hello!
+    Bob --> Tim: Oh, hi Tim!
+```
+

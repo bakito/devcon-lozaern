@@ -1,5 +1,8 @@
+<!-- font_size: 2 -->
+
 # Kubernetes-Cluster sichern: Die Realität
 
+<!-- newlines: 2 -->
 Herkömmliche Backup-Tools eignen sich **nicht** für Container.
 
 <!-- incremental_lists: true -->
@@ -10,9 +13,10 @@ Herkömmliche Backup-Tools eignen sich **nicht** für Container.
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
-
+<!-- font_size: 2 -->
 # Gängige Kubernetes Backup-Tools
 
+<!-- newlines: 2 -->
 Spricht man über Kubernetes-Backups, fallen meistens diese Namen:
 
 <!-- incremental_lists: true -->
@@ -29,8 +33,10 @@ Spricht man über Kubernetes-Backups, fallen meistens diese Namen:
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Persistente Daten vs. Konfiguration
+<!-- newlines: 2 -->
 
 Die genannten Tools sind mächtig, haben aber oft einen Haken:
 Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
@@ -45,8 +51,9 @@ Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
-
+<!-- font_size: 2 -->
 # Was macht KubExporter so stark?
+<!-- newlines: 2 -->
 
 <!-- incremental_lists: true -->
 
@@ -57,8 +64,10 @@ Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Installation & Verwendung
+<!-- newlines: 2 -->
 
 ### Schnelle Installation
 ```bash

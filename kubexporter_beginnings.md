@@ -1,36 +1,35 @@
-# Kubernetes-Cluster sichern: So einfach gehts
-
-Kubexporter History
+<!-- font_size: 2 -->
+Wer sind wir?
 
 <!-- incremental_lists: true -->
 
-* **Marc Brugger aka Bakito**: "Das geht besser"-Mindset - und Morgen gibt es die Lösung auf Github
+* **Marc Brugger aka bakito**: "Das geht besser"-Mindset - und Morgen gibt es die Lösung auf Github
 * **Raphael Müller aka Raphi Milla**: "KISS-Prinzip"-Mindset - Einfache Dinge zuerst
 
 
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Wo alles begann (once upon a time in zürich hardturm quartier)
 
 <!-- incremental_lists: true -->
-
 * **Marc**
   * **begann seinen Kubernetes Entwickler-Journey mit OpenShift 3 und bemängelte das Tooling ...**
-    **Dann kamen Custom-Ressourcen und Operator welche mit Go am besten Laufen ..**
-    **Plötzlich wurde aus OpenShift eine komplett customizde Enterprise Kubernetes Platform genau auf die Firma abgestummen .**
-
+    **Dann kamen Custom-Ressourcen und Operator welche mit go am besten Laufen ..**
+    **Plötzlich wurde aus OpenShift eine komplett customizde Enterprise Kubernetes Platform genau auf die Firma abgestimmt.**
+    
 * **Raphi**
   * **kam aus der Linux-Welt hinzu und fing Feuer am definierten Zustand der Platform ...**
     **Dann kam die Erkenntnis, dass Operator und Reconsilation Loops einem das Leben erleichtern ..**
     **Plötzlich konnten Abläufe die in der alten Welt Monate brauchten, innerhalb 24 h abgearbeitet werden .**
-<!-- incremental_lists: false -->
 
+<!-- end_slide -->
+<!-- font_size: 2 -->
+# Warum sind wir hier?
 
 <!-- incremental_lists: true -->
-
-* **Warum sind wir hier ?**
   * **OpenSource hilft bei der Zusammenarbeit auch in neuen Firmen** (Marc Bison, Raphi CONCORDIA)
   * **OpenSource hilft verbunden zu blieben** (und wenn nur schon über PR's und Issues)
   * **OpenSource hilft sich und das Produkt weiter zu entwickeln** (PR's und MR's für neue Features und Ideen)
@@ -40,9 +39,8 @@ Kubexporter History
   * **Cluster Upgrades** (War vor dem Upgrade ganz sicher anders)
   * **Fat Fingers** (Ooops I did it again)
 
-<!-- incremental_lists: false -->
-
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Die Lösung: KubExporter
 

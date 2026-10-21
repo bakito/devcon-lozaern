@@ -1,4 +1,6 @@
+<!-- font_size: 2 -->
 # Kubernetes-Cluster sichern: So einfach gehts
+<!-- newlines: 2 -->
 
 Kubexporter im Schnelldurchlauf
 
@@ -13,8 +15,10 @@ Kubexporter im Schnelldurchlauf
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Warum das alles wirklich praktisch ist
+<!-- newlines: 2 -->
 
 Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original gefunden ?
 
@@ -33,8 +37,10 @@ Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Diff is your friend
+<!-- newlines: 2 -->
 #TODO
 # --> screenshot eines diffs ? 
 
@@ -54,21 +60,24 @@ Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
-
+<!-- font_size: 2 -->
 
 # Was macht KubExporter so stark?
+<!-- newlines: 2 -->
 
 <!-- incremental_lists: true -->
 
 * **Automatische Erkennung**: Exportiert standardmässig alle Ressourcen. Neue CRDs werden automatisch erfasst.
-* **Flexibilität**: Exportiert wahlweise als **YAML**, **JSON** oder **kubernets yaml/kyaml**.
+* **Flexibilität**: Exportiert wahlweise als **YAML** oder **JSON**.
 * **Bereinigung**: Unerwünschte Ressourcen und Standard-Metadaten lassen sich gezielt ausschliessen.
 
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Installation & Verwendung
+<!-- newlines: 2 -->
 
 ### Schnelle Installation
 ```bash
@@ -78,7 +87,7 @@ kubectl krew install exporter
 # Oder via Homebrew
 brew install --cask kubexporter
 ```
-
+<!-- newlines: 2 -->
 ### Einfacher Aufruf
 ```bash
 # Exportiert standardmässig in den Ordner "exports"
@@ -86,29 +95,12 @@ kubectl exporter
 ```
 
 <!-- end_slide -->
-
-# Advanced Features (Ausblick)
-KubExporter bietet nativen Support für moderne GitOps- und Backup-Workflows:
-
-<!-- incremental_lists: true -->
-
-* 📦 **Archivierung**: Direktes Packen als `.tar.gz` mit Upload in **S3** oder **GCS**.
-* 🔐 **Security**: Integrierte Ver- und Entschlüsselung von Secrets mittels **Age** oder **AES**.
-* 📊 **Monitoring**: Liefert OTel-Metriken inklusive vorgefertigtem **Grafana-Dashboard**.
-* 🦉 **Versionskontrolle**: Exporte lassen sich einfach in eine Git-Versionierung integrieren.
-
-
-<!-- incremental_lists: false -->
-
-<!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Fazit
+<!-- newlines: 2 -->
 <!-- incremental_lists: true -->
 
 * Container-Backups neu gedacht.
 * Fokus auf das, was zählt: **Die Infrastruktur als Code**.
 * Schlank, effizient und perfekt für die CI/CD-Pipeline.
-
-<!-- incremental_lists: false -->
-
-<!-- end_slide -->

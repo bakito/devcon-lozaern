@@ -1,5 +1,7 @@
 ---
 theme:
+  slide_title:
+    font_size: 2
   override:
     footer:
       style: template
@@ -18,9 +20,7 @@ theme:
 KubExporter  
 (kubernetes) Backup better. Together.
 ====
-
 <!-- alignment: center -->
-
 <span style="color: #2e6ce6">Raphael Müller / Concordia &nbsp;&nbsp; Marc Brugger / Bison Group</span>
 
 <!-- end_slide -->
@@ -31,11 +31,14 @@ KubExporter
 <!-- end_slide -->
 
 <!-- include: kubexporter_intro.md -->
+<!-- end_slide -->
 
 <!-- include: kubexporter_at_work.md -->
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
-# Ursprung
+# Ursprung - wo kommt KubExporter her?
+<!-- newlines: 2 -->
 
 <!-- incremental_lists: true -->
 
@@ -48,7 +51,7 @@ KubExporter
 
 <!-- incremental_lists: true -->
 
-* Entscheidung, ein neues Backup-Tool in Go zu implementieren
+* Entscheidung, ein neues Backup-Tool in go zu implementieren
     * Opt-Out statt Opt-In (Alle Ressourcen sind standardmässig enthalten)
     * Exportdauer auf < 30s reduziert
     * Läuft als CronJob → Keine permanenten Ressourcen erforderlich
@@ -57,8 +60,10 @@ KubExporter
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Warum OpenSource
+<!-- newlines: 2 -->
 
 <!-- incremental_lists: true -->
 
@@ -75,8 +80,10 @@ KubExporter
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Funktionen
+<!-- newlines: 2 -->
 
 <!-- incremental_lists: true -->
 
@@ -91,8 +98,10 @@ KubExporter
 <!-- incremental_lists: false -->
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Wie / wann neue Funktionen hinzufügen?
+<!-- newlines: 2 -->
 
 <!-- incremental_lists: true -->
 
@@ -111,6 +120,7 @@ KubExporter
 
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Demo
 
@@ -119,16 +129,18 @@ KubExporter
 ```bash +exec +acquire_terminal
 clear
 cd "${DEVBOX_PROJECT_ROOT}/kubexporter"
-kubexporter --config demo-config.yaml -p bar --summary=false
+~/bin/kubexporter --config demo-config.yaml -p bar --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."
 ```
 
 <!-- end_slide -->
+<!-- font_size: 2 -->
 
 # Demo otel (OpenTelemetry) Metrics
 
 If configures, metrics will be pushed to the otel collector if the sync is finished.
+<!-- font_size: 1 -->
 <!-- alignment: center -->
 
 | Metric                                       | Description                                        |
@@ -147,8 +159,7 @@ If configures, metrics will be pushed to the otel collector if the sync is finis
 | kubexporter.resource.query_duration_seconds  | Query duration per kind in seconds                 |
 | kubexporter.resource.query_pages             | Number of query pages per kind                     |
 
-<!-- newlines: 2 -->
 
-```bash +exec +pty:150:30
-kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances
+```bash +exec +pty:150:20
+kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances | cut -c40-200 
 ```

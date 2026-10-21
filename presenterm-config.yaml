@@ -1,5 +1,5 @@
 defaults:
-  terminal_font_size: 30
+  terminal_font_size: 2
   theme: dark
 
 transition:

@@ -163,3 +163,5 @@ If configures, metrics will be pushed to the otel collector if the sync is finis
 ```bash +exec +pty:150:20
 kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances | cut -c40-200 
 ```
+
+![alt text](image.png)

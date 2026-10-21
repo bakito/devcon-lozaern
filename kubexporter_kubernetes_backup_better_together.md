@@ -25,7 +25,8 @@ KubExporter
 
 <!-- end_slide -->
 
-# Include rmu Slides
+<!-- // Include rmu Slides -->
+
 <!-- include: kubexporter_beginnings.md -->
 <!-- end_slide -->
 

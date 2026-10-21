@@ -13,7 +13,7 @@ Herkömmliche Backup-Tools eignen sich **nicht** für Container.
 
 # Gängige Kubernetes Backup-Tools
 
-Wenn man über Kubernetes-Backups spricht, fallen meistens diese Namen:
+Spricht man über Kubernetes-Backups, fallen meistens diese Namen:
 
 <!-- incremental_lists: true -->
 
@@ -46,18 +46,6 @@ Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
 
 <!-- end_slide -->
 
-# Die Lösung: KubExporter
-
-Auf GitHub finden wir genau das Werkzeug, das uns diese Arbeit abnimmt:
-
-#TODO
-# --> screenshot eines kubexporter file-systems ??
-👉 `https://github.com/bakito/kubexporter`
-
-> "KubExporter allows you to export resources from kubernetes as yaml/json files."
-
-<!-- end_slide -->
-
 # Was macht KubExporter so stark?
 
 <!-- incremental_lists: true -->
@@ -86,5 +74,3 @@ brew install --cask kubexporter
 # Exportiert standardmässig in den Ordner "exports"
 kubectl exporter
 ```
-
-<!-- end_slide -->

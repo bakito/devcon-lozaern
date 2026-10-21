@@ -55,14 +55,6 @@ Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original
 
 <!-- end_slide -->
 
-# Die Lösung: KubExporter
-
-Auf GitHub finden wir genau das Werkzeug, das uns diese Arbeit abnimmt:
-👉 `https://github.com/bakito/kubexporter`
-
-> "KubExporter allows you to export resources from kubernetes as yaml/json files."
-
-<!-- end_slide -->
 
 # Was macht KubExporter so stark?
 
@@ -96,7 +88,6 @@ kubectl exporter
 <!-- end_slide -->
 
 # Advanced Features (Ausblick)
-
 KubExporter bietet nativen Support für moderne GitOps- und Backup-Workflows:
 
 <!-- incremental_lists: true -->
@@ -112,9 +103,12 @@ KubExporter bietet nativen Support für moderne GitOps- und Backup-Workflows:
 <!-- end_slide -->
 
 # Fazit
+<!-- incremental_lists: true -->
 
 * Container-Backups neu gedacht.
 * Fokus auf das, was zählt: **Die Infrastruktur als Code**.
 * Schlank, effizient und perfekt für die CI/CD-Pipeline.
+
+<!-- incremental_lists: false -->
 
 <!-- end_slide -->

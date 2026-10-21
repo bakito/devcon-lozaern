@@ -14,14 +14,18 @@ Kubexporter History
 
 # Wo alles begann (once upon a time in zürich hardturm quartier)
 
-Marc begann seinen Kubernetes Entwickler-Journey mit OpenShift 3 und bemängelte das Tooling ...
-Dann kamen Custom-Ressourcen und Operator welche mit Go am besten Laufen ..
-Plötzlich wurde aus OpenShift eine komplett customizde Enterprise Kubernetes Platform genau auf die Firma abgestummen .
+<!-- incremental_lists: true -->
 
-Raphi kam aus der Linux-Welt hinzu und fing Feuer am definierten Zustand der Platform ...
-Dann kam die Erkenntnis, dass Operator und Reconsilation Loops einem das Leben erleichtern ..
-Plötzlich konnten Abläufe die in der alten Welt Monate brauchten, innerhalb 24 h abgearbeitet werden .
+* **Marc**
+  * **begann seinen Kubernetes Entwickler-Journey mit OpenShift 3 und bemängelte das Tooling ...**
+    **Dann kamen Custom-Ressourcen und Operator welche mit Go am besten Laufen ..**
+    **Plötzlich wurde aus OpenShift eine komplett customizde Enterprise Kubernetes Platform genau auf die Firma abgestummen .**
 
+* **Raphi**
+  * **kam aus der Linux-Welt hinzu und fing Feuer am definierten Zustand der Platform ...**
+    **Dann kam die Erkenntnis, dass Operator und Reconsilation Loops einem das Leben erleichtern ..**
+    **Plötzlich konnten Abläufe die in der alten Welt Monate brauchten, innerhalb 24 h abgearbeitet werden .**
+<!-- incremental_lists: false -->
 
 
 <!-- incremental_lists: true -->
@@ -47,14 +51,3 @@ Auf GitHub finden wir genau das Werkzeug, das uns diese Arbeit abnimmt:
 
 > "KubExporter allows you to export resources from kubernetes as yaml/json files."
 
-<!-- end_slide -->
-
-# Was macht KubExporter so stark?
-
-<!-- incremental_lists: true -->
-
-* **Automatische Erkennung**: Exportiert standardmässig alle Ressourcen. Neue CRDs werden automatisch erfasst.
-* **Flexibilität**: Exportiert wahlweise als **YAML**, **JSON**.
-* **Bereinigung**: Unerwünschte Ressourcen und Standard-Metadaten lassen sich gezielt ausschliessen.
-
-<!-- end_slide -->

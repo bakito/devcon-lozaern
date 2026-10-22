@@ -10,7 +10,7 @@ cd "$(dirname "${BASH_SOURCE[0]}")"
 
 echo "🚀 === KubExporter Demo Setup ==="
 
-if [[ -z "${KILLERKODA_MODE:-}" ]]; then
+if [[ -z "${KILLERCODA_MODE:-}" ]]; then
 
   # Make sure the kubeconfig directory exists when KUBECONFIG is set (e.g. by devbox)
   if [[ -n "${KUBECONFIG:-}" ]]; then
@@ -41,8 +41,8 @@ if [[ -z "${KILLERKODA_MODE:-}" ]]; then
   kubectl config use-context "${KUBECONFIG_CONTEXT}"
   echo "  🔗 Using context: ${KUBECONFIG_CONTEXT}"
 else
-  echo "🐳 [1/3] Using killerkoda cluster ..."
-  CLUSTER_NAME="KILLERKODA"
+  echo "🐳 [1/3] Using killercoda cluster ..."
+  CLUSTER_NAME="KILLERCODA"
 fi
 
 # -------------------------------------------------------------------
@@ -83,6 +83,8 @@ echo ""
 echo "📡 OpenTelemetry Collector:"
 echo "  NodePort endpoint: localhost:32317 (from host)"
 echo "  In-cluster service: otel-collector.otel.svc.cluster.local:4317"
-echo ""
-echo "🧹 To clean up:"
-echo "  kind delete cluster --name ${CLUSTER_NAME}"
+if [[ -z "${KILLERCODA_MODE:-}" ]]; then
+  echo ""
+  echo "🧹 To clean up:"
+  echo "  kind delete cluster --name ${CLUSTER_NAME}"
+fi

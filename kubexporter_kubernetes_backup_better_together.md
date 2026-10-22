@@ -73,9 +73,10 @@ KubExporter
 * Für alle zugänglich
     * Apache 2.0-Lizenz
 * Integration in bestehende Paket-/Plugin-Manager
-    * ❄️  nix
+    *   GitHub
     * 🍺 brew
     * 🔌 krew (kubectl-Plugin)
+    * ❄️  nix
 
 <!-- incremental_lists: false -->
 

@@ -30,8 +30,7 @@
       "echo \"Install update kubectl KubExporter plugin\"",
       "krew install krew exporter >/dev/null 2>&1",
       "krew upgrade exporter >/dev/null 2>&1 || true",
-      "export PATH=\"${KREW_ROOT:-$HOME/.krew}/bin:$PATH\"",
-      "kubectl config set-context --current --namespace=${NAMESPACE}"
+      "export PATH=\"${KREW_ROOT:-$HOME/.krew}/bin:$PATH\""
     ],
     "scripts": {
       "present": [

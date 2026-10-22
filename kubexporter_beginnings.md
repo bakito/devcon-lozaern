@@ -21,11 +21,11 @@ speaker_note: |
 <!-- incremental_lists: true -->
 * **Marc**
   * **begann seinen Kubernetes Entwickler-Journey mit OpenShift 3 und bemängelte das Tooling ...**
-    **Dann kamen Custom-Ressourcen und Operator welche mit go am besten Laufen ..**
-    **Plötzlich wurde aus OpenShift eine komplett customizde Enterprise Kubernetes Platform genau auf die Firma abgestimmt.**
+    **Dann kamen Custom-Ressourcen und Operator welche mit go am besten laufen ..**
+    **Plötzlich wurde aus OpenShift eine komplett customizde Enterprise Kubernetes Plattform, genau auf die Firma abgestimmt.**
     
 * **Raphi**
-  * **kam aus der Linux-Welt hinzu und fing Feuer am definierten Zustand der Platform ...**
+  * **kam aus der Linux-Welt hinzu und fing Feuer am definierten Zustand der Plattform ...**
     **Dann kam die Erkenntnis, dass Operator und Reconsilation Loops einem das Leben erleichtern ..**
     **Plötzlich konnten Abläufe die in der alten Welt Monate brauchten, innerhalb 24 h abgearbeitet werden .**
 

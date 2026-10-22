@@ -137,16 +137,31 @@ read -n 1 -s -r -p "Press any key to return to the presentation..."
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
+# Verschlüssen von Secrets mit age - Secret unverschlüsselt 
+
+```bash +exec +pty:120:10
+cd "${PRESENTATION_ROOT}/kubexporter"
+cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
+```
+
+
+<!-- end_slide -->
+<!-- font_size: 2 -->
+
 # Verschlüssen von Secrets mit age
 
 Bestehende Dateien nachträglich verschlüsseln – nur der **öffentliche** Schlüssel des Empfängers wird benötigt:
 
-```bash +exec +pty:120:12
+```bash +exec +pty:120:6
 cd "${PRESENTATION_ROOT}/kubexporter"
 rm -f age.key && age-keygen -o age.key 2>/dev/null
 PUB=$(age-keygen -y age.key)
 kubectl exporter encrypt --age-public-key "${PUB}" ${SECRET}
-cut -c1-80 ${SECRET} | sed -n '2,4p' | bat -l yaml
+```
+<!-- pause -->
+
+```bash +exec +pty:120:15
+cut -c1-80 ${SECRET} | sed -n '1,14p' | bat -l yaml
 ```
 
 <!-- end_slide -->
@@ -158,6 +173,11 @@ cut -c1-80 ${SECRET} | sed -n '2,4p' | bat -l yaml
 kubectl exporter decrypt \
   --age-identity "${PRESENTATION_ROOT}/kubexporter/age.key" \
   ${SECRET}
+```
+<!-- pause -->
+
+```bash +exec +pty:120:10
+cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 ```
 
 <!-- end_slide -->
@@ -233,7 +253,7 @@ kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances |
 
 * Firmen-internes Problem
 * Initiative durch Mitarbeiter etwas Neues zu entwickeln
-* Publikation als OpenSource Projekt bringt Nutzen auch für Andere.
+* Publikation als OpenSource Projekt bringt Nutzen auch für andere.
 * Zusammen können wir das Tool weiter verbessern
 
 <!-- end_slide -->

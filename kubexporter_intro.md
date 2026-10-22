@@ -58,7 +58,7 @@ Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
 <!-- incremental_lists: true -->
 
 * **Automatische Erkennung**: Exportiert standardmässig alle Ressourcen. Neue CRDs werden automatisch erfasst.
-* **Flexibilität**: Exportiert wahlweise als **YAML**, **JSON** oder **kubernets yaml/kyaml**.
+* **Flexibilität**: Exportiert wahlweise als **YAML** oder **JSON**.
 * **Bereinigung**: Unerwünschte Ressourcen und Standard-Metadaten lassen sich gezielt ausschliessen.
 
 <!-- incremental_lists: false -->

@@ -73,7 +73,7 @@ KubExporter
 * Für alle zugänglich
     * Apache 2.0-Lizenz
 * Integration in bestehende Paket-/Plugin-Manager
-    * ❄️ nix
+    * ❄️  nix
     * 🍺 brew
     * 🔌 krew (kubectl-Plugin)
 
@@ -167,7 +167,7 @@ kubectl exporter decrypt \
 # Use case: diff two snapshots
 
 
-```bash +exec +pty:80:4
+```bash +exec +pty:120:4
 cd /tmp/kubexporter-demo
 rm snap* -Rf
 kubectl -n ${NAMESPACE} delete configmap diff-hello >/dev/null
@@ -185,7 +185,11 @@ kubectl patch configmap diff-hello -p '{"data":{"hello":"Lucerne"}}' -n ${NAMESP
 kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2 -c -q
 ```
 
-<!-- pause --> 
+<!-- end_slide -->
+<!-- font_size: 2 -->
+
+
+# Use case: diff two snapshots
 ```bash +exec +pty:80:15
 cd /tmp/kubexporter-demo
 kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2 -c -q
@@ -218,8 +222,8 @@ If configures, metrics will be pushed to the OTel collector if the sync is finis
 | kubexporter.resource.query_pages             | Number of query pages per kind                     |
 
 
-```bash +exec +pty:150:20
-kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances | cut -c40-200 
+```bash +exec +pty:120:20
+kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances | cut -c40-170
 ```
 
 

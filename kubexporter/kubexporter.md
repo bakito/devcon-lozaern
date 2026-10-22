@@ -509,7 +509,7 @@ Recap
 <!-- incremental_lists: true -->
 
 * Export **all** resources (incl. CRDs) – opt-out filtering
-* Clean, deterministic, **diff-friendly** YAML / JSON / kyaml
+* Clean, deterministic, **diff-friendly** YAML / JSON
 * Fine-grained filters: kinds, namespaces, field values, age, owners
 * **Mask** or **encrypt** (AES / age) sensitive fields – decrypt later
 * Fix `ownerReferences` against a new cluster

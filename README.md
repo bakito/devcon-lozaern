@@ -85,3 +85,7 @@ The live demos run against the kind cluster `kubexporter-demo` (namespace `kubex
 ## excalidraw
 
 https://excalidraw.com/#json=ITgkNv-ASxc4PULGVwdSc,x1iq3B_XlabKcnKE5INLXw
+
+## Killercoda
+
+144x36

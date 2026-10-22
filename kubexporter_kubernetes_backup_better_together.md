@@ -274,7 +274,7 @@ kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances |
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
-Warum KubExporter?
+# Warum KubExporter?
 
 * Backup / Disaster Recovery – ein Snapshot aller Ressourcen eines Clusters als einfache Dateien
 * Audit & Diff – Cluster untereinander oder denselben Cluster im Zeitverlauf vergleichen

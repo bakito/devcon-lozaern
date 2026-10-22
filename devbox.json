@@ -17,7 +17,9 @@
     "SLIDES":             "kubexporter_kubernetes_backup_better_together.md",
     "KUBEXPORTER_SLIDES": "kubexporter/kubexporter.md",
     "KUBECONFIG":         "$HOME/.kube/kind/kubeconfig/kubexporter-demo",
-    "PRESENTATION_ROOT":  "${DEVBOX_PROJECT_ROOT}"
+    "PRESENTATION_ROOT":  "${DEVBOX_PROJECT_ROOT}",
+    "EXPORTS":            "/tmp/kubexporter-demo/exports",
+    "SECRET":             "/tmp/kubexporter-demo/exports/kubexporter-test/Secret.kubexporter-secret.yaml"
   },
   "shell": {
     "init_hook": [

@@ -127,9 +127,9 @@ KubExporter
 (Drücke `ctrl + e` zum Ausführen)
 
 ```bash +exec +acquire_terminal
-clear
+rm -rf ${EXPORTS}
 cd "${PRESENTATION_ROOT}/kubexporter"
-kubexporter --config demo-config.yaml -p bar --summary=false
+kubectl exporter --config demo-config.yaml -p bar --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."
 ```
@@ -137,9 +137,35 @@ read -n 1 -s -r -p "Press any key to return to the presentation..."
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
-# Demo otel (OpenTelemetry) Metrics
+# Verschlüssen von Secrets mit age
 
-If configures, metrics will be pushed to the otel collector if the sync is finished.
+Bestehende Dateien nachträglich verschlüsseln – nur der **öffentliche** Schlüssel des Empfängers wird benötigt:
+
+```bash +exec +pty:120:12
+cd "${PRESENTATION_ROOT}/kubexporter"
+rm -f age.key && age-keygen -o age.key 2>/dev/null
+PUB=$(age-keygen -y age.key)
+kubectl exporter encrypt --age-public-key "${PUB}" ${SECRET}
+cut -c1-80 ${SECRET} | sed -n '2,4p' | bat -l yaml
+```
+
+<!-- end_slide -->
+<!-- font_size: 2 -->
+
+# Entschlüsselte von Secrets mit age
+
+```bash +exec +pty:120:6
+kubectl exporter decrypt \
+  --age-identity "${PRESENTATION_ROOT}/kubexporter/age.key" \
+  ${SECRET}
+```
+
+<!-- end_slide -->
+<!-- font_size: 2 -->
+
+# Demo OTel (OpenTelemetry) Metrics
+
+If configures, metrics will be pushed to the OTel collector if the sync is finished.
 <!-- font_size: 1 -->
 <!-- alignment: center -->
 

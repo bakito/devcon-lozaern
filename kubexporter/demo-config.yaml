@@ -46,12 +46,12 @@ masked:
   kindFields:
     ConfigMap:
       - [data, token]
-encrypted:
-  aesKey: "12345678901234567890123456789012"
-  kindFields:
-    Secret:
-      - [data]
-      - [stringData]
+#encrypted:
+#  aesKey: "12345678901234567890123456789012"
+#  kindFields:
+#    Secret:
+#      - [data]
+#      - [stringData]
 sortSlices:
   rbac.authorization.k8s.io.ClusterRole:
     - [rules]

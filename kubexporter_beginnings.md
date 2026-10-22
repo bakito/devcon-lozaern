@@ -34,7 +34,7 @@ speaker_note: |
 # Warum sind wir hier?
 
 <!-- incremental_lists: true -->
-  * **OpenSource hilft bei der Zusammenarbeit, auch in neuen Firmen (Marc Bison, Raphi CONCORDIA - auch über Firmengrenzen hinaus/hinweg)
+  * **OpenSource hilft bei der Zusammenarbeit, auch in neuen Firmen** (Marc Bison, Raphi CONCORDIA - auch über Firmengrenzen hinaus/hinweg)
   * **OpenSource hilft verbunden zu bleiben** (und wenn nur schon über PR's und Issues)
   * **OpenSource hilft sich und das Produkt weiter zu entwickeln** (PR's und MR's für neue Features und Ideen)
   * **Opensource hilft anderen Kollegen und Firmen dieselben Probleme anzugehen** (Wie macht Ihr ... ?)

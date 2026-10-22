@@ -11,7 +11,8 @@
     "k9s":                          "0.51.0",
     "noto-fonts-color-emoji":       "2.051",
     "age":                          "1.3.2",
-    "krew":                         "0.5.0"
+    "krew":                         "0.5.0",
+    "qrencode":                     "4.1.1"
   },
   "env": {
     "SLIDES":             "kubexporter_kubernetes_backup_better_together.md",
@@ -36,7 +37,7 @@
       "present": [
         "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
         "kind export kubeconfig --name kubexporter-demo >/dev/null",
-        "presenterm ${SLIDES} -c presenterm-config.yaml -x"
+        "presenterm ${SLIDES} -c presenterm-config.yaml -X"
       ],
       "pdf": [
         "presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"

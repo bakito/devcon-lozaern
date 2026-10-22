@@ -139,7 +139,7 @@ read -n 1 -s -r -p "Press any key to return to the presentation..."
 
 # Verschlüssen von Secrets mit age - Secret unverschlüsselt 
 
-```bash +exec +pty:100:10
+```bash +exec +pty:85:10
 cd "${PRESENTATION_ROOT}/kubexporter"
 cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 ```
@@ -152,7 +152,7 @@ cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 
 Bestehende Dateien nachträglich verschlüsseln – nur der **öffentliche** Schlüssel des Empfängers wird benötigt:
 
-```bash +exec +pty:100:5
+```bash +exec +pty:85:5
 cd "${PRESENTATION_ROOT}/kubexporter"
 rm -f age.key && age-keygen -o age.key 2>/dev/null
 PUB=$(age-keygen -y age.key)
@@ -163,7 +163,7 @@ kubectl exporter encrypt --age-public-key "${PUB}" ${SECRET}
 
 # Verschlüssen von Secrets mit age - Secret verschlüsselt
 
-```bash +exec +pty:100:15
+```bash +exec +pty:85:15
 cut -c1-80 ${SECRET} | sed -n '1,14p' | bat -l yaml
 ```
 
@@ -172,7 +172,7 @@ cut -c1-80 ${SECRET} | sed -n '1,14p' | bat -l yaml
 
 # Entschlüsselte von Secrets mit age
 
-```bash +exec +pty:100:5
+```bash +exec +pty:85:5
 kubectl exporter decrypt \
   --age-identity "${PRESENTATION_ROOT}/kubexporter/age.key" \
   ${SECRET}
@@ -182,7 +182,7 @@ kubectl exporter decrypt \
 
 # Verschlüssen von Secrets mit age - Secret unverschlüsselt
 
-```bash +exec +pty:100:10
+```bash +exec +pty:85:10
 cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 ```
 
@@ -193,7 +193,7 @@ cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 # Use case: diff two snapshots
 
 
-```bash +exec +pty:100:4
+```bash +exec +pty:85:8
 cd /tmp/kubexporter-demo
 rm snap* -Rf
 kubectl -n ${NAMESPACE} delete configmap diff-hello >/dev/null
@@ -201,14 +201,16 @@ kubectl -n ${NAMESPACE} delete configmap diff-hoi >/dev/null
 
 kubectl create configmap diff-hello --from-literal=hello=World \
   -n ${NAMESPACE}
-  
-kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap1 -c -q
+
+echo
+kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap1 --clear-target --quiet
 
 kubectl create configmap diff-hoi --from-literal=hoi=Lozärn \
   -n ${NAMESPACE}
 kubectl patch configmap diff-hello -p '{"data":{"hello":"Lucerne"}}' -n ${NAMESPACE} 
 
-kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2 -c -q
+echo
+kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2  --clear-target --quiet
 ```
 
 <!-- end_slide -->
@@ -248,7 +250,7 @@ If configures, metrics will be pushed to the OTel collector if the sync is finis
 | kubexporter.resource.query_pages             | Number of query pages per kind                     |
 
 
-```bash +exec +pty:100:20
+```bash +exec +pty:85:20
 kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances | cut -c40-170
 ```
 
@@ -270,22 +272,25 @@ kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances |
 
 ### Slides: https://killercoda.com/bakito/scenario/devcon-lozaern
 
-```text
-  █▀▀▀▀▀█ █ ▄██ █ █▄▀▀▀ ▀█▄ █▀▀▀▀▀█  
-  █ ███ █ ▄▄▄ ▄▀▀▀  █▄▀ ▄ █ █ ███ █  
-  █ ▀▀▀ █  ▀ █▀  ▄█ █  ▄█ █ █ ▀▀▀ █  
-  ▀▀▀▀▀▀▀ █▄▀ █ █▄█▄█▄▀ ▀ ▀ ▀▀▀▀▀▀▀  
-  █▄██ █▀█▄ █▀█▄ ▀██▄▄▄█ █  █▄ █▄▀█  
-   ▄█▀▀▄▀▀ ▀▄▀▀▀   ▄▀   █▀▄▀▄█▀█ ▀█  
-   ▄▀██▀▀▀█▄▄ ▀ █▀▀   █ ▀▀██ █▀▀ ▄   
-  █▄▄▀██▀▄ ▄██ █▀▄ ▀▀▀▀██ █▄████▄    
-   ▄█▀██▀ ▀▀█▄██▄▄▀ ▀ ████▄██ ██▀▄▄  
-  █▀██▄▀▀▀▄█ ▄▄█ ▀▀▄█▄  █▄█▄ ▀█ ▀█   
-  ▄▀▀██ ▀ █▄▀ █ █▄█   ▄ ▀█ ▀▄  █▀▀▄  
-   ▄█▀▄▀▀ ▀▄██▄▀▀█  ▄▀█▀▀█  ▄ ██▀▀█  
-  ▀ ▀▀  ▀ ▄▄█▀  ▄▄▄▀▄█▄▄▀▄█▀▀▀█▄ █▀  
-  █▀▀▀▀▀█ █  ▄ ▀▀▄▄██▀▀▀ ██ ▀ █▄▄▄▄  
-  █ ███ █ ▄▄█ █   █▀▀▄  ██▀▀▀█▀ ▀█▄  
-  █ ▀▀▀ █ ▀█▀▀█▄█▀▀█▀ █▀▀▄▄▄▀█▄▀▀ ▄  
-  ▀▀▀▀▀▀▀ ▀  ▀▀ ▀ ▀▀▀▀ ▀ ▀  ▀ ▀▀▀
+
+```bash +exec_replace +no_background
+echo "https://killercoda.com/bakito/scenario/devcon-lozaern" | qrencode -t utf8i
+```
+
+<!-- end_slide -->
+<!-- font_size: 2 -->
+
+# Informationen zur Umgebung
+
+<!-- newlines: 2 -->
+
+```bash +exec_replace +pty:85:12
+echo -e "NAMESPACE:"
+echo -e "  ${NAMESPACE}\n"
+echo -e "PRESENTATION_ROOT:"
+echo -e "  ${PRESENTATION_ROOT}\n"
+echo -e "EXPORTS:"
+echo -e "  ${EXPORTS}\n"
+echo -e "SECRET:"
+echo -e "  ${SECRET}"
 ```

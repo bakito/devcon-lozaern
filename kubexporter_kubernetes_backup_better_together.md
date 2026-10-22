@@ -93,7 +93,7 @@ KubExporter
 * 🔐 Secret-Maskierung oder -Verschlüsselung (age/AES)
 * 📈 OTLP-Metriken
 * 🔄 Owner-Reference-Migration (Wiederimport mit aktualisierten Owner-References)
-* Möglichkeit für integration in git
+* Möglichkeit für Integration in git
 
 <!-- incremental_lists: false -->
 
@@ -113,8 +113,8 @@ KubExporter
     * Regression nach Implementierung der Multi-Namespace-Auswahl. KubExporter wurde ohne Fehler beendet, hat aber nichts
       exportiert → Mit Metriken können wir Alerts basierend auf den Metriken einrichten.
 * 🔄 Owner-Reference-Migration
-    * Ressourcen, die in einem Cluster importiert wurden, in dem die übergeordneten Ressourcen neu erstellt wurden (neue UUID),
-      wurden aufgrund ungültiger Owner-Reference gelöscht
+    * Ressourcen, die in einem Cluster importiert wurden - indem die übergeordneten Ressourcen neu erstellt wurden (neue UUID) - wurden aufgrund ungültiger Owner-Reference gelöscht
+
 
 <!-- incremental_lists: false -->
 
@@ -260,7 +260,7 @@ kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances |
 <!-- font_size: 2 -->
 # Fragen? - Probier mich aus!
 
-### KubExporter: https://github.com/bakito/kubexporter
+## KubExporter: https://github.com/bakito/kubexporter
 
 ### Slides: https://killercoda.com/bakito/scenario/devcon-lozaern
 

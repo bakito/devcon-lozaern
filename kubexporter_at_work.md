@@ -26,9 +26,9 @@ Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original
 
 * **Ressourcen Ressourcen Ressourcen**
   * **CR's welche nicht unter Git/Argo Kontrolle waren** (Der Klassiker)
-  * **ConfigMaps, Secrets oder andere Resouce-Definitionen welche abhanden kamen** (Soll es auch im professionellen Umfeld geben)
-  * **Cluster eigene Resourcen welche sich geändert haben** (Wer kennt OLM ?)
-  * **RBAC, Service-Accounts und Konsorten** (Haben wir das nicht ge-Gitopst ?)
+  * **ConfigMaps, Secrets oder andere Ressource-Definitionen welche abhanden kamen** (Soll es auch im professionellen Umfeld geben)
+  * **Cluster eigene Ressourcen, die sich geändert haben** (Wer kennt OLM ?)
+  * **RBAC, Service-Accounts und Konsorten** (Haben wir das nicht ge-GitOpst ?)
 * **Murphy is in the house**
   * **Namespace Configs** (Aber ich dachte, wir hätten ...)
   * **Cluster Upgrades** (War vor dem Upgrade ganze sicher anders)

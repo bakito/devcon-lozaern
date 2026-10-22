@@ -27,7 +27,7 @@ Spricht man über Kubernetes-Backups, fallen meistens diese Namen:
   * **TrilioVault** (Fokus auf Cloud-Native & App-Sicherung)
 * **Storage- & Snapshot-Fokussiert**
   * **Longhorn** (Eingebautes Backup für verteilten Storage)
-  * **OADP** (Red Hat Produkt welches auf Velero aufsetzt)
+  * **OADP** (Red Hat Produkt, welches auf Velero aufsetzt)
   * **Portworx PX-Backup** (Fokus auf Multi-Cloud-Storage)
 
 <!-- incremental_lists: false -->
@@ -41,11 +41,13 @@ Spricht man über Kubernetes-Backups, fallen meistens diese Namen:
 Die genannten Tools sind mächtig, haben aber oft einen Haken:
 Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
 
+<!-- newlines: 2 -->
+<!-- pause -->
 ### Unsere Philosophie:
 
 <!-- incremental_lists: true -->
 
-* Wir wollen möglichst **keine** persistenten Daten innerhalb von Kubernetes betreiben.
+* Wir wollen möglichst **keine** persistenten Daten innerhalb von Kubernetes betreiben
 * **Was wir wirklich brauchen:** Eine reine Sicherung der Config-Ressourcen!
 
 <!-- incremental_lists: false -->

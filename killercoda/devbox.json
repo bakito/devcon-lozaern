@@ -28,7 +28,7 @@
     ],
     "scripts": {
       "present": [
-        "cd ${DEVBOX_PROJECT_ROOT}/../ && presenterm ${SLIDES} -c presenterm-config.yaml -X"
+        "cd ${DEVBOX_PROJECT_ROOT}/../ && presenterm ${SLIDES} -c presenterm-config.yaml -X -x"
       ],
       "k8s-setup": [
         "bash ../setup/setup.sh"

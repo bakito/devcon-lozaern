@@ -18,12 +18,6 @@ jobs:
             pdf_file: kubexporter_kubernetes_backup_better_together.pdf
             html_task: ci-html
             html_file: kubexporter_kubernetes_backup_better_together.html
-          - name: kubexporter
-            dir: kubexporter
-            pdf_task: ci-k-pdf
-            pdf_file: kubexporter.pdf
-            html_task: ci-k-html
-            html_file: kubexporter.html
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

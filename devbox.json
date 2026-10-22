@@ -37,7 +37,7 @@
       "present": [
         "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
         "kind export kubeconfig --name kubexporter-demo >/dev/null",
-        "presenterm ${SLIDES} -c presenterm-config.yaml -X"
+        "presenterm ${SLIDES} -c presenterm-config.yaml -X -x"
       ],
       "pdf": [
         "presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"
@@ -46,41 +46,17 @@
         "presenterm ${SLIDES} -c presenterm-config.yaml --export-html",
         "bash setup/center-html.sh kubexporter_kubernetes_backup_better_together.html"
       ],
-      "k-present": [
-        "kind get clusters 2>/dev/null | grep -qx kubexporter-demo || bash setup/setup.sh",
-        "kind export kubeconfig --name kubexporter-demo >/dev/null",
-        "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml -X"
-      ],
-      "k-pdf": [
-        "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-pdf"
-      ],
-      "k-html": [
-        "presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-html",
-        "bash setup/center-html.sh kubexporter_kubernetes_backup_better_together.html"
-      ],
       "ci-pdf-export": [
         "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c presenterm-config.yaml --export-pdf"
       ],
       "ci-html-export": [
         "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${SLIDES} -c presenterm-config.yaml --export-html"
       ],
-      "ci-k-pdf-export": [
-        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-pdf"
-      ],
-      "ci-k-html-export": [
-        "expect .github/scripts/expect-tty.exp --rows 30 --cols 120 -- presenterm ${KUBEXPORTER_SLIDES} -c presenterm-config.yaml --export-html"
-      ],
       "kind-setup": [
         "bash setup/setup.sh"
       ],
       "kind-destroy": [
         "kind delete cluster --name kubexporter-demo"
-      ],
-      "font-big": [
-        "sed -i 's/^font-size = .*/font-size = 24/' ~/.config/ghostty/config.ghostty"
-      ],
-      "font-reset": [
-        "sed -i 's/^font-size = .*/font-size = 12/' ~/.config/ghostty/config.ghostty"
       ]
     }
   }

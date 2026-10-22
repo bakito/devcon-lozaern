@@ -70,6 +70,8 @@ Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
 <!-- newlines: 2 -->
 
 ### Schnelle Installation
+
+
 ```bash
 # Als kubectl Plugin via Krew
 kubectl krew install exporter
@@ -77,8 +79,10 @@ kubectl krew install exporter
 # Oder via Homebrew
 brew install --cask kubexporter
 ```
+<!-- newlines: 2 -->
 
 ### Einfacher Aufruf
+
 ```bash
 # Exportiert standardmässig in den Ordner "exports"
 kubectl exporter

@@ -110,6 +110,6 @@ kubectl exporter
 <!-- newlines: 2 -->
 <!-- incremental_lists: true -->
 
-* Container-Backups neu gedacht.
-* Fokus auf das, was zählt: **Die Infrastruktur als Code**.
-* Schlank, effizient und perfekt für die CI/CD-Pipeline.
+* Container-Backups neu gedacht
+* Fokus auf das, was zählt: **Die Infrastruktur als Code**
+* Schlank, effizient und perfekt für die CI/CD-Pipeline

@@ -125,6 +125,7 @@ KubExporter
 # Demo
 
 (Drücke `ctrl + e` zum Ausführen)
+<!-- font_size: 1 -->
 
 ```bash +exec +acquire_terminal
 rm -rf ${EXPORTS}
@@ -137,20 +138,21 @@ read -n 1 -s -r -p "Press any key to return to the presentation..."
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
-# Verschlüssen von Secrets mit age - Secret unverschlüsselt 
+# Verschlüssen von Secrets mit age - Secret unverschlüsselt
+<!-- font_size: 1 -->
 
 ```bash +exec +pty:85:10
 cd "${PRESENTATION_ROOT}/kubexporter"
 cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 ```
 
-
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
 # Verschlüssen von Secrets mit age
-
 Bestehende Dateien nachträglich verschlüsseln – nur der **öffentliche** Schlüssel des Empfängers wird benötigt:
+
+<!-- font_size: 1 -->
 
 ```bash +exec +pty:85:5
 cd "${PRESENTATION_ROOT}/kubexporter"
@@ -162,6 +164,7 @@ kubectl exporter encrypt --age-public-key "${PUB}" ${SECRET}
 <!-- font_size: 2 -->
 
 # Verschlüssen von Secrets mit age - Secret verschlüsselt
+<!-- font_size: 1 -->
 
 ```bash +exec +pty:85:15
 cut -c1-80 ${SECRET} | sed -n '1,14p' | bat -l yaml
@@ -171,6 +174,7 @@ cut -c1-80 ${SECRET} | sed -n '1,14p' | bat -l yaml
 <!-- font_size: 2 -->
 
 # Entschlüsselte von Secrets mit age
+<!-- font_size: 1 -->
 
 ```bash +exec +pty:85:5
 kubectl exporter decrypt \
@@ -181,6 +185,7 @@ kubectl exporter decrypt \
 <!-- font_size: 2 -->
 
 # Verschlüssen von Secrets mit age - Secret unverschlüsselt
+<!-- font_size: 1 -->
 
 ```bash +exec +pty:85:10
 cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
@@ -191,7 +196,7 @@ cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 
 
 # Use case: diff two snapshots
-
+<!-- font_size: 1 -->
 
 ```bash +exec +pty:85:8
 cd /tmp/kubexporter-demo
@@ -216,8 +221,9 @@ kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2  --clear-target --quiet
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
-
 # Use case: diff two snapshots
+<!-- font_size: 1 -->
+
 ```bash +exec +pty:80:15
 cd /tmp/kubexporter-demo
 kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2 -c -q
@@ -282,7 +288,9 @@ echo "https://killercoda.com/bakito/scenario/devcon-lozaern" | qrencode -t utf8i
 
 # Informationen zur Umgebung
 
+
 <!-- newlines: 2 -->
+<!-- font_size: 1 -->
 
 ```bash +exec_replace +pty:85:12
 echo -e "NAMESPACE:"

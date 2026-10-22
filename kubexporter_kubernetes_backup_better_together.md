@@ -167,20 +167,26 @@ kubectl exporter decrypt \
 # Use case: diff two snapshots
 
 
-```bash +exec +pty:120:5
+```bash +exec +pty:80:4
 cd /tmp/kubexporter-demo
 rm snap* -Rf
 kubectl -n ${NAMESPACE} delete configmap diff-hello >/dev/null
 kubectl -n ${NAMESPACE} delete configmap diff-hoi >/dev/null
-kubectl create configmap diff-hello --from-literal=hello=World -n ${NAMESPACE} >/dev/null
+
+kubectl create configmap diff-hello --from-literal=hello=World \
+  -n ${NAMESPACE}
+  
 kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap1 -c -q
-kubectl create configmap diff-hoi --from-literal=hoi=Lozärn -n ${NAMESPACE} >/dev/null
+
+kubectl create configmap diff-hoi --from-literal=hoi=Lozärn \
+  -n ${NAMESPACE}
 kubectl patch configmap diff-hello -p '{"data":{"hello":"Lucerne"}}' -n ${NAMESPACE} 
+
 kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2 -c -q
 ```
 
 <!-- pause --> 
-```bash +exec +pty:120:5
+```bash +exec +pty:80:15
 cd /tmp/kubexporter-demo
 kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2 -c -q
 diff -ru --color=always snap1 snap2

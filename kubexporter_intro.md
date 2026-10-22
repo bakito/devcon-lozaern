@@ -40,6 +40,8 @@ Spricht man über Kubernetes-Backups, fallen meistens diese Namen:
 
 Die genannten Tools sind mächtig, haben aber oft einen Haken:
 Sie sind darauf ausgelegt, persistente Volumes (PVs) zu sichern.
+<!-- newlines: 1 -->
+Oder so bieten nur eine Komplettlösung an. (Backup/Restore alles oder nichts) 
 
 <!-- newlines: 2 -->
 <!-- pause -->

@@ -40,11 +40,11 @@ Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original
 <!-- font_size: 2 -->
 
 # Diff is your friend
-<!-- newlines: 2 -->
+<!-- newlines: 1 -->
 ```bash
 diff -u snap1/kubexporter-test/ConfigMap.diff-hello.yaml snap2/kubexporter-test/ConfigMap.diff-hello.yaml
 ```
-<!-- newlines: 2 -->
+<!-- newlines: 1 -->
 
 ```diff
 --- snap1/kubexporter-test/ConfigMap.diff-hello.yaml	2026-10-22 16:19:55.912027563 +0200

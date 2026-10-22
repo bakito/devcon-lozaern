@@ -139,7 +139,7 @@ read -n 1 -s -r -p "Press any key to return to the presentation..."
 
 # Verschlüssen von Secrets mit age - Secret unverschlüsselt 
 
-```bash +exec +pty:120:10
+```bash +exec +pty:100:10
 cd "${PRESENTATION_ROOT}/kubexporter"
 cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 ```
@@ -152,15 +152,18 @@ cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 
 Bestehende Dateien nachträglich verschlüsseln – nur der **öffentliche** Schlüssel des Empfängers wird benötigt:
 
-```bash +exec +pty:120:6
+```bash +exec +pty:100:5
 cd "${PRESENTATION_ROOT}/kubexporter"
 rm -f age.key && age-keygen -o age.key 2>/dev/null
 PUB=$(age-keygen -y age.key)
 kubectl exporter encrypt --age-public-key "${PUB}" ${SECRET}
 ```
-<!-- pause -->
+<!-- end_slide -->
+<!-- font_size: 2 -->
 
-```bash +exec +pty:120:15
+# Verschlüssen von Secrets mit age - Secret verschlüsselt
+
+```bash +exec +pty:100:15
 cut -c1-80 ${SECRET} | sed -n '1,14p' | bat -l yaml
 ```
 
@@ -169,14 +172,17 @@ cut -c1-80 ${SECRET} | sed -n '1,14p' | bat -l yaml
 
 # Entschlüsselte von Secrets mit age
 
-```bash +exec +pty:120:6
+```bash +exec +pty:100:5
 kubectl exporter decrypt \
   --age-identity "${PRESENTATION_ROOT}/kubexporter/age.key" \
   ${SECRET}
 ```
-<!-- pause -->
+<!-- end_slide -->
+<!-- font_size: 2 -->
 
-```bash +exec +pty:120:10
+# Verschlüssen von Secrets mit age - Secret unverschlüsselt
+
+```bash +exec +pty:100:10
 cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 ```
 
@@ -187,7 +193,7 @@ cut -c1-80 ${SECRET} | sed -n '1,4p' | bat -l yaml
 # Use case: diff two snapshots
 
 
-```bash +exec +pty:120:4
+```bash +exec +pty:100:4
 cd /tmp/kubexporter-demo
 rm snap* -Rf
 kubectl -n ${NAMESPACE} delete configmap diff-hello >/dev/null
@@ -242,7 +248,7 @@ If configures, metrics will be pushed to the OTel collector if the sync is finis
 | kubexporter.resource.query_pages             | Number of query pages per kind                     |
 
 
-```bash +exec +pty:120:20
+```bash +exec +pty:100:20
 kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances | cut -c40-170
 ```
 

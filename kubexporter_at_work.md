@@ -41,15 +41,24 @@ Wieviele Male haben wir schon Configs überschrieben oder nicht mehr im Original
 
 # Diff is your friend
 <!-- newlines: 2 -->
-#TODO
-# --> screenshot eines diffs ? 
+```bash
+diff -u snap1/kubexporter-test/ConfigMap.diff-hello.yaml snap2/kubexporter-test/ConfigMap.diff-hello.yaml
+```
+<!-- newlines: 2 -->
 
-* Config vor und nach der Änderung vergleichen: -> yep
-* Audit-Log zeigt in eine bestimmte Richtung ?: -> vergleichen wir die Config
-
-### Git is your friend
-#TODO
-# --> screenshot terminal git diff ? 
+```diff
+--- snap1/kubexporter-test/ConfigMap.diff-hello.yaml	2026-10-22 16:19:55.912027563 +0200
++++ snap2/kubexporter-test/ConfigMap.diff-hello.yaml	2026-10-22 16:19:56.125027564 +0200
+@@ -1,6 +1,6 @@
+ apiVersion: v1
+ data:
+-  hello: World
++  hello: Lucerne
+ kind: ConfigMap
+ metadata:
+   name: diff-hello
+```
+<!-- newlines: 2 -->
 
 <!-- incremental_lists: true -->
 

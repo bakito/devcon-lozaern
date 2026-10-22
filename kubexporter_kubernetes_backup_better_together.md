@@ -226,10 +226,24 @@ If configures, metrics will be pushed to the OTel collector if the sync is finis
 kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances | cut -c40-170
 ```
 
+<!-- end_slide -->
+<!-- font_size: 2 -->
+# KubExporter - (kubernetes) Backup better. Together.
+<!-- incremental_lists: true -->
+
+* Firmen-internes Problem
+* Initiative durch Mitarbeiter etwas Neues zu entwickeln
+* Publikation als OpenSource Projekt bringt Nutzen auch für Andere.
+* Zusammen können wir das Tool weiter verbessern
 
 <!-- end_slide -->
 <!-- font_size: 2 -->
-# Probier mich aus!
+# Fragen? - Probier mich aus!
+
+### KubExporter: https://github.com/bakito/kubexporter
+
+### Slides: https://killercoda.com/bakito/scenario/devcon-lozaern
+
 ```text
   █▀▀▀▀▀█ █ ▄██ █ █▄▀▀▀ ▀█▄ █▀▀▀▀▀█  
   █ ███ █ ▄▄▄ ▄▀▀▀  █▄▀ ▄ █ █ ███ █  

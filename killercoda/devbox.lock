@@ -203,6 +203,54 @@
         }
       }
     },
+    "krew@0.5.0": {
+      "last_modified": "2026-10-20T14:23:57Z",
+      "resolved": "github:NixOS/nixpkgs/5adc50831c259f87faeb09ddf930d43597197473#krew",
+      "source": "devbox-search",
+      "version": "0.5.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zn5anxfrp7cd7dr8nyqni5qjd9fhsr5k-krew-0.5.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/zn5anxfrp7cd7dr8nyqni5qjd9fhsr5k-krew-0.5.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/324lkj7pdln3v32icaapprfirh8979sf-krew-0.5.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/324lkj7pdln3v32icaapprfirh8979sf-krew-0.5.0"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/avi0q0zf78075gdgr725b4cizrz0gpgg-krew-0.5.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/avi0q0zf78075gdgr725b4cizrz0gpgg-krew-0.5.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/y8q0rfsk0xzfv4rnfcw3h7fgdqxb3wmy-krew-0.5.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/y8q0rfsk0xzfv4rnfcw3h7fgdqxb3wmy-krew-0.5.0"
+        }
+      }
+    },
     "presenterm@0.16.1": {
       "last_modified": "2026-10-02T22:55:44Z",
       "resolved": "github:NixOS/nixpkgs/55ba7f49ef2962b42cbd126522b7df5f95037679#presenterm",

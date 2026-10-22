@@ -29,7 +29,8 @@
       "mkdir -p ~/.local/share/fonts && ln -sf $(find /nix/store -name 'NotoColorEmoji.ttf' -type f 2>/dev/null | head -1) ~/.local/share/fonts/NotoColorEmoji.ttf && fc-cache -f ~/.local/share/fonts/NotoColorEmoji.ttf >/dev/null 2>&1 || true",
       "echo \"Install update kubectl KubExporter plugin\"",
       "krew install krew exporter >/dev/null 2>&1",
-      "krew upgrade exporter >/dev/null 2>&1",
+      "krew upgrade exporter >/dev/null 2>&1 || true",
+      "export PATH=\"${KREW_ROOT:-$HOME/.krew}/bin:$PATH\"",
       "kubectl config set-context --current --namespace=${NAMESPACE}"
     ],
     "scripts": {

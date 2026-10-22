@@ -128,7 +128,7 @@ KubExporter
 
 ```bash +exec +acquire_terminal
 rm -rf ${EXPORTS}
-cd "${PRESENTATION_ROOT}/kubexporter"
+cd "${PRESENTATION_ROOT}/kubexporter" && clear
 kubectl exporter --config demo-config.yaml -p bar --summary=false
 echo
 read -n 1 -s -r -p "Press any key to return to the presentation..."

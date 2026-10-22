@@ -20,7 +20,11 @@
     "init_hook": [
       "alias dbrun='devbox run'",
       "case $- in *i*) . \"${DEVBOX_PROJECT_ROOT}/../setup/completion.bash\" ;; esac",
-      "kubectl config set-context --current --namespace=${NAMESPACE}"
+      "kubectl config set-context --current --namespace=${NAMESPACE}",
+      "echo \"Install update kubectl KubExporter plugin\"",
+      "krew install krew exporter >/dev/null 2>&1",
+      "krew upgrade exporter >/dev/null 2>&1 || true",
+      "export PATH=\"${KREW_ROOT:-$HOME/.krew}/bin:$PATH\""
     ],
     "scripts": {
       "present": [

@@ -163,6 +163,32 @@ kubectl exporter decrypt \
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
+
+# Use case: diff two snapshots
+
+
+```bash +exec +pty:120:5
+cd /tmp/kubexporter-demo
+rm snap* -Rf
+kubectl -n ${NAMESPACE} delete configmap diff-hello >/dev/null
+kubectl -n ${NAMESPACE} delete configmap diff-hoi >/dev/null
+kubectl create configmap diff-hello --from-literal=hello=World -n ${NAMESPACE} >/dev/null
+kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap1 -c -q
+kubectl create configmap diff-hoi --from-literal=hoi=Lozärn -n ${NAMESPACE} >/dev/null
+kubectl patch configmap diff-hello -p '{"data":{"hello":"Lucerne"}}' -n ${NAMESPACE} 
+kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2 -c -q
+```
+
+<!-- pause --> 
+```bash +exec +pty:120:5
+cd /tmp/kubexporter-demo
+kubectl exporter -n ${NAMESPACE} -i ConfigMap -t snap2 -c -q
+diff -ru --color=always snap1 snap2
+```
+
+<!-- end_slide -->
+<!-- font_size: 2 -->
+
 # Demo OTel (OpenTelemetry) Metrics
 
 If configures, metrics will be pushed to the OTel collector if the sync is finished.

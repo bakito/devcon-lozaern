@@ -19,7 +19,8 @@
     "KUBECONFIG":         "$HOME/.kube/kind/kubeconfig/kubexporter-demo",
     "PRESENTATION_ROOT":  "${DEVBOX_PROJECT_ROOT}",
     "EXPORTS":            "/tmp/kubexporter-demo/exports",
-    "SECRET":             "/tmp/kubexporter-demo/exports/kubexporter-test/Secret.kubexporter-secret.yaml"
+    "SECRET":             "/tmp/kubexporter-demo/exports/kubexporter-test/Secret.kubexporter-secret.yaml",
+    "NAMESPACE":          "kubexporter-test"
   },
   "shell": {
     "init_hook": [
@@ -28,7 +29,8 @@
       "mkdir -p ~/.local/share/fonts && ln -sf $(find /nix/store -name 'NotoColorEmoji.ttf' -type f 2>/dev/null | head -1) ~/.local/share/fonts/NotoColorEmoji.ttf && fc-cache -f ~/.local/share/fonts/NotoColorEmoji.ttf >/dev/null 2>&1 || true",
       "echo \"Install update kubectl KubExporter plugin\"",
       "krew install krew exporter >/dev/null 2>&1",
-      "krew upgrade exporter >/dev/null 2>&1"
+      "krew upgrade exporter >/dev/null 2>&1",
+      "kubectl config set-context --current --namespace=${NAMESPACE}"
     ],
     "scripts": {
       "present": [

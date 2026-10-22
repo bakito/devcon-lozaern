@@ -13,12 +13,14 @@
     "KILLERCODA_MODE":   "true",
     "PRESENTATION_ROOT": "${DEVBOX_PROJECT_ROOT}/..",
     "EXPORTS":            "/tmp/kubexporter-demo/exports",
-    "SECRET":             "/tmp/kubexporter-demo/exports/kubexporter-test/Secret.kubexporter-secret.yaml"
+    "SECRET":             "/tmp/kubexporter-demo/exports/kubexporter-test/Secret.kubexporter-secret.yaml",
+    "NAMESPACE":          "kubexporter-test"
   },
   "shell": {
     "init_hook": [
       "alias dbrun='devbox run'",
-      "case $- in *i*) . \"${DEVBOX_PROJECT_ROOT}/../setup/completion.bash\" ;; esac"
+      "case $- in *i*) . \"${DEVBOX_PROJECT_ROOT}/../setup/completion.bash\" ;; esac",
+      "kubectl config set-context --current --namespace=${NAMESPACE}"
     ],
     "scripts": {
       "present": [

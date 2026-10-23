@@ -69,25 +69,3 @@ Hauptsächlich bieten sie eine Komplettlösung an. (Backup/Restore alles oder ni
 
 <!-- end_slide -->
 <!-- font_size: 2 -->
-
-# Installation & Verwendung
-<!-- newlines: 2 -->
-
-### Schnelle Installation
-
-
-```bash
-# Als kubectl Plugin via Krew
-kubectl krew install exporter
-
-# Oder via Homebrew
-brew install --cask kubexporter
-```
-<!-- newlines: 2 -->
-
-### Einfacher Aufruf
-
-```bash
-# Exportiert standardmässig in den Ordner "exports"
-kubectl exporter
-```

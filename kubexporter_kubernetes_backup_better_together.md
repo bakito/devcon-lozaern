@@ -293,10 +293,23 @@ Die Ausgabe besteht nur aus Dateien: Sie lassen sich auf der Festplatte, in eine
 
 ### Slides: https://killercoda.com/bakito/scenario/devcon-lozaern
 
+<!-- newlines: 2 -->
+<!-- column_layout: [2, 2] -->
+<!-- column: 0 -->
+## Killercoda Scenario
 
 ```bash +exec_replace +no_background
 echo "https://killercoda.com/bakito/scenario/devcon-lozaern" | qrencode -t utf8i
 ```
+
+<!-- column: 1 -->
+
+## Feedback
+
+```bash +exec_replace +no_background
+echo "https://killercoda.com/bakito/scenario/devcon-lozaern" | qrencode -t utf8i
+```
+
 
 <!-- end_slide -->
 <!-- font_size: 2 -->

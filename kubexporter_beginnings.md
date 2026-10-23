@@ -4,7 +4,7 @@ Wer sind wir?
 <!-- incremental_lists: true -->
 
 * **Marc Brugger aka bakito**: "Das geht besser"-Mindset - und Morgen gibt es die Lösung auf Github
-* **Raphael Müller aka Raphi Milla**: "KISS-Prinzip"-Mindset - Einfache Dinge zuerst
+* **Raphael Müller aka Raphi Milla**: "KISS-Prinzip"-Mindset - einfache Dinge zuerst
 
 
 <!-- incremental_lists: false -->
@@ -16,16 +16,16 @@ speaker_note: |
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
-# Wo alles begann (once upon a time in zürich hardturm quartier)
+# Wo alles begann (Once Upon a Time im Züri Hardturm Quartier)
 
 <!-- incremental_lists: true -->
 * **Marc**
-  * **begann seinen Kubernetes Entwickler-Journey mit OpenShift 3 und bemängelte das Tooling ...**
-  * **Dann kamen Custom-Ressourcen und Operator welche mit go am besten laufen ...**
-  *  **Plötzlich wurde aus OpenShift eine komplett customizde Enterprise Kubernetes Plattform, genau auf die Firma abgestimmt**
+  * **Begann seinen Kubernetes Entwickler-Journey mit OpenShift 3 und bemängelte das Tooling ...**
+  * **Dann kamen Custom-Ressources und Operator welche mit Golang am besten zu Entwickeln sind ...**
+  *  **Plötzlich wurde aus OpenShift eine komplett angepasste Enterprise Kubernetes Plattform, genau auf die Firma abgestimmt**
     
 * **Raphi**
-  * **kam aus der Linux-Welt hinzu und fing Feuer am definierten Zustand der Plattform ...**
+  * **Kam aus der Linux-Welt hinzu und fing Feuer am definierten Zustand der Plattform ...**
   * **Dann kam die Erkenntnis, dass Operator und Reconsilation Loops einem das Leben erleichtern ...**
   * **Plötzlich konnten Abläufe die in der alten Welt Monate brauchten, innerhalb 24 h abgearbeitet werden**
 

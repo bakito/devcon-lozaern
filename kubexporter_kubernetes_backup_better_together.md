@@ -281,7 +281,7 @@ kubectl logs -l app=otel-collector -n otel --tail=-1 | grep exported.instances |
 * Migration – Workloads zwischen Clustern / Providern verschieben
 * Debugging – den vollständigen Zustand eines Namespace für die Offline-Analyse sichern
 * Manifest-Extraktion – manuell erstellten Cluster-Zustand in wiederverwendbare Manifeste umwandeln
-* Ausführbar ad-hoc, in einer Pipeline oder als CronJob
+* Ausführbar ad-hoc - in einer Pipeline oder als CronJob
 
 Die Ausgabe besteht nur aus Dateien: Sie lassen sich auf der Festplatte, in einem tar.gz, in S3 / GCS oder als Files in Git ablegen.
 

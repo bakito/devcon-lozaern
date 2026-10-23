@@ -21,7 +21,7 @@ KubExporter
 (kubernetes) Backup better. Together.
 ====
 <!-- alignment: center -->
-<span style="color: #2e6ce6">Raphael Müller / Concordia &nbsp;&nbsp; Marc Brugger / Bison Group</span>
+<span style="color: #2e6ce6">Raphael Müller / CONCORDIA &nbsp;&nbsp; Marc Brugger / Bison Group</span>
 
 <!-- end_slide -->
 

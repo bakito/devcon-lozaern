@@ -22,7 +22,7 @@ speaker_note: |
 * **Marc**
   * **Begann seinen Kubernetes Entwickler-Journey mit OpenShift 3 und bemängelte das Tooling ...**
   * **Dann kamen Custom-Ressources und Operator welche mit Golang am besten zu Entwickeln sind ...**
-  *  **Plötzlich wurde aus OpenShift eine komplett customizde Enterprise Kubernetes Plattform, genau auf die Firma abgestimmt**
+  *  **Plötzlich wurde aus OpenShift eine komplett angepasste Enterprise Kubernetes Plattform, genau auf die Firma abgestimmt**
     
 * **Raphi**
   * **Kam aus der Linux-Welt hinzu und fing Feuer am definierten Zustand der Plattform ...**

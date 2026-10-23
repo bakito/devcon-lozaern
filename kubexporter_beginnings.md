@@ -16,7 +16,7 @@ speaker_note: |
 <!-- end_slide -->
 <!-- font_size: 2 -->
 
-# Wo alles begann (once upon a time in zürich hardturm quartier)
+# Wo alles begann (Once Upon a Time im Züri Hardturm Quartier)
 
 <!-- incremental_lists: true -->
 * **Marc**

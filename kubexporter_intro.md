@@ -66,6 +66,4 @@ Hauptsächlich bieten sie eine Komplettlösung an. (Backup/Restore alles oder ni
 * **Bereinigung**: Unerwünschte Ressourcen und Standard-Metadaten lassen sich gezielt ausschliessen.
 
 <!-- incremental_lists: false -->
-
-<!-- end_slide -->
-<!-- font_size: 2 -->
+f

@@ -307,7 +307,7 @@ echo "https://killercoda.com/bakito/scenario/devcon-lozaern" | qrencode -t utf8i
 ## Feedback
 
 ```bash +exec_replace +no_background
-echo "https://killercoda.com/bakito/scenario/devcon-lozaern" | qrencode -t utf8i
+echo "https://sfeedback.com/qu5uaC" | qrencode -t utf8i
 ```
 
 

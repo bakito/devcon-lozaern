@@ -4,7 +4,7 @@ Wer sind wir?
 <!-- incremental_lists: true -->
 
 * **Marc Brugger aka bakito**: "Das geht besser"-Mindset - und Morgen gibt es die Lösung auf Github
-* **Raphael Müller aka Raphi Milla**: "KISS-Prinzip"-Mindset - Einfache Dinge zuerst
+* **Raphael Müller aka Raphi Milla**: "KISS-Prinzip"-Mindset - einfache Dinge zuerst
 
 
 <!-- incremental_lists: false -->
